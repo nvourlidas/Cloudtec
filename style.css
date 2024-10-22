@@ -26,6 +26,14 @@ body {
     position: relative;
     
 }
+.services{
+    display: flex;
+    justify-content: space-around;  
+    align-items: center;
+    background-image: radial-gradient(rgba(12, 12, 12, 0.171) 2px, transparent 0);
+  background-size: 30px 30px;
+  background-position: -5px -5px;
+}
 
 .header{
     background-color: var(--primary-color);
@@ -195,5 +203,11 @@ body {
 
     .logo img {
         width: 80px; 
+    }
+
+    .services{
+        display:block;
+        justify-content: space-around;  
+        align-items: center;
     }
 }
