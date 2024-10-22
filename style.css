@@ -1,0 +1,199 @@
+:root {
+    --primary-color: #246AF3; 
+    --accent-color: #F0F4F8;  
+    --secondary-color: #26344B; 
+    --background: #f0f8ff;
+    --contrast: #FFC947;
+    --black: #0A1931;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: var(--background);
+}
+
+.header,
+.hero,
+.services{
+    height: 100vh;
+    position: relative;
+    
+}
+
+.header{
+    background-color: var(--primary-color);
+    background-image: radial-gradient(rgba(12, 12, 12, 0.171) 2px, transparent 0);
+  background-size: 30px 30px;
+  background-position: -5px -5px;
+}
+
+.sticky {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+    padding: 30px;
+    color: var(--secondary-color);
+    -webkit-box-shadow: 0 14px 14px -14px rgba(0, 0, 0, .75);
+	-moz-box-shadow: 0 14px 14px -14px rgba(0, 0, 0, .75);
+	box-shadow: 0 14px 14px -14px rgba(0, 0, 0, .75);
+}
+
+.logo {
+    position: absolute;
+    left: 20px; 
+}
+
+.logo img {
+    width: 120px; 
+    height: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: background 0.5s ease-in-out;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+     background-color: var(--primary-color);
+     color: var(--accent-color); 
+    border-radius: 5px;
+    
+}
+
+.hero {
+    display: flex;
+    align-items: center; /* Center items vertically */
+   justify-content: center;
+    padding: 20px; /* Adjust padding as needed */
+    background-image: radial-gradient(rgba(12, 12, 12, 0.171) 2px, transparent 0);
+  background-size: 30px 30px;
+  background-position: -5px -5px;
+
+}
+
+.hero-content {
+    display: flex;
+    justify-content: center; /* Space between text and SVG */
+    align-items: center; /* Center items vertically */
+    width: 100%; /* Allow content to take the full width */
+}
+
+.text-content {
+    max-width: 30vw; /* Limit the width of the text content */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    color: var(--secondary-color);
+}
+
+.text-content h1{
+    font-size: 4vw;
+}
+
+.text-content p{
+    font-size: 2vw;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 20px; /* Add some space above the button */
+    padding: 10px 20px;
+    background-color: var(--contrast);
+    color: var(--secondary-color); /* Button text color */
+    text-decoration: none;
+    border-radius: 5px; /* Round the button corners */
+    text-align: center;
+    width: 50%;
+    font-size: 1vw;
+}
+
+#animated-path,
+.animated-path {
+    stroke-dasharray: 1800; /* For #animated-path */
+    stroke-dashoffset: 1800; /* For #animated-path */
+}
+
+/* Adjust for .animated-path */
+.animated-path {
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+}
+
+/* Keyframes remain the same */
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.animate {
+    animation: draw 10s linear forwards; /* Apply the animation */
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column; 
+        align-items: center;
+        gap: 10px; 
+    }
+
+    .nav-links a {
+        font-size: 16px; 
+    }
+
+    .logo {
+        position: static;
+        margin-top: 15px;
+    }
+
+    .logo img {
+        width: 100px;  
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links a {
+        font-size: 9px; 
+        padding: 8px 10px;
+    }
+
+
+    .logo img {
+        width: 80px; 
+    }
+}
