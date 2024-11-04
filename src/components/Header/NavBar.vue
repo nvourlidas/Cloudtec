@@ -3,8 +3,13 @@
     <div class="container">
       <div class="logo">
         <router-link to="/">
-          <img :src="require('@/assets/cloudtec_white.png')" alt="Consulting Agency Logo" class="logo-img" />
+          <img :src="require('@/assets/cloudtec-trans.png')" alt="Consulting Agency Logo" class="logo-img" />
         </router-link>
+      </div>
+      <div class="menu-icon" @click="showMenu = !showMenu">
+        <span class="bar">Arxiki</span>
+        <span class="bar"></span>
+        <span class="bar"></span>
       </div>
       <ul class="nav-links">
         <li><router-link to="/">Αρχική</router-link></li>
@@ -18,7 +23,13 @@
 
 <script>
 export default {
-  name: 'NavBar'
+  name: 'NavBar',
+
+  data() {
+    return {
+      showMenu: false,
+    };
+  }
 }
 </script>
 
@@ -44,6 +55,19 @@ export default {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-icon .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px 0;
+  transition: 0.4s;
 }
 
 .logo{
@@ -92,5 +116,26 @@ export default {
 .cta-button:hover {
   background-color: var(--contrast);
   color: var(--black);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide links by default on mobile */
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Position below the navbar */
+    left: 0;
+    width: 100%;
+    background-color: #007bff;
+    padding: 1rem 0;
+  }
+
+  .nav-links.show {
+    display: flex; /* Show links when toggled */
+  }
+
+  .menu-icon {
+    display: block; /* Show hamburger icon on mobile */
+  }
 }
 </style>

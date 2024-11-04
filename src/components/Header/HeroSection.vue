@@ -92,10 +92,20 @@
   .hero-section {
     grid-template-columns: 1fr;
     text-align: center;
+    align-items: center;
+    justify-content: center;
   }
 
   .hero-content {
     max-width: 100%;
+  }
+
+  .hero-title{
+    font-size: 2rem;
+  }
+
+  .hero-button{
+    margin-bottom: 7%;
   }
 }
   </style>
