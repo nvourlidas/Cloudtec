@@ -6,7 +6,7 @@
         <button class="hero-button">Ανακάλυψέ το</button>
       </div>
       <div class="hero-image">
-        <img src="http://landrick.vue.themesbrand.com/images/illustrator/Startup_SVG.svg" alt="Hero Image" />
+        <img src="@/assets/Data extraction-rafiki.png" alt="Hero Image" />
       </div>
     </section>
   </template>
@@ -24,7 +24,7 @@
     align-items: center;
     justify-content: center;
     padding: 2rem;
-    grid-column-gap: 1rem; /* Space between text and image */
+    grid-column-gap: 0.2rem; /* Space between text and image */
     margin-top: 7%;
   }
   
@@ -46,11 +46,12 @@
   }
 
   .success {
-    color: var(--primary-color);
+    
+    color: #FFC947;
     transition: 0.3s ease-in;
   }
   .success:hover {
-    color: var(--contrast);
+    color: #2f55d4;
   }
   
   .hero-subtitle {
@@ -62,7 +63,7 @@
   .hero-button {
     padding: 1rem 2rem;
     font-size: 1.5rem;
-    background-color: var(--primary-color);
+    background-color: #2f55d4;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -71,7 +72,7 @@
   }
   
   .hero-button:hover {
-    background-color: var(--contrast);
+    background-color: #FFC947;
     color: var(--black);
   }
   
@@ -79,7 +80,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 60%; /* Brings image closer to text */
+    max-width: 80%; /* Brings image closer to text */
   }
   
   .hero-image img {

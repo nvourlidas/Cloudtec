@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../App.vue'
+import App from '../App.vue'
 
 
 const routes = [
-  { path: '/', component: Home },
+  { path: '/', component: App },
 
 ]
 

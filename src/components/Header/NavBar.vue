@@ -12,11 +12,11 @@
         <span class="bar"></span>
       </div>
       <ul class="nav-links">
-        <li><router-link to="/">Αρχική</router-link></li>
-        <li><router-link to="/services">Υπηρεσίες</router-link></li>
-        <li><router-link to="/about">About Us</router-link></li>
+        <li><router-link to="/"><font-awesome-icon icon="house" class="icons"/> Αρχική</router-link></li>
+        <li><router-link to="/services"><font-awesome-icon icon="server" class="icons"/> Υπηρεσίες</router-link></li>
+        <li><router-link to="/about"><font-awesome-icon icon="address-card" class="icons"/> About Us</router-link></li>
       </ul>
-      <button class="cta-button">Επικοινωία</button>
+      <button class="cta-button"><font-awesome-icon icon="phone" class="icons"/> Επικοινωία</button>
     </div>
   </nav>
 </template>
@@ -46,6 +46,7 @@ export default {
   left: 0;
   z-index: 1;
   height: auto;
+  background-color: #1f2d3d;
 }
 
 .container {
@@ -97,12 +98,14 @@ export default {
 }
 
 .nav-links a:hover {
-  color: var(--primary-color);
+  color: #2f55d4;
 }
+
+
 
 .cta-button {
   padding: 0.5rem 1rem;
-  background-color: var(--primary-color);
+  background-color: #2f55d4;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -114,8 +117,8 @@ export default {
 }
 
 .cta-button:hover {
-  background-color: var(--contrast);
-  color: var(--black);
+  background-color: #FFC947;
+  color: #0A1931;
 }
 
 @media (max-width: 768px) {
