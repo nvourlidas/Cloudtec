@@ -4,18 +4,22 @@
   </div>
   <div v-else class="home fadeIn">
     <Header></Header>
+    <MainPage ></MainPage>
   </div>
 </template>
 
 <script>
 import Header from './components/Header/headerMain.vue'
 import SvgLoader from './components/Loader/SvgLoader.vue';
+import MainPage from './components/Main/MainPage.vue';
 
 export default {
   name: 'App',
   components: {
     Header,
-    SvgLoader
+    SvgLoader,
+    MainPage
+    
   },
 
   data(){
@@ -37,7 +41,7 @@ export default {
 body{
     font-family: "Play", sans-serif;
     background-color: #1f2d3d;
-    transition: all 0.3s ease-in-out;
+    margin: 0;
   }
 
 

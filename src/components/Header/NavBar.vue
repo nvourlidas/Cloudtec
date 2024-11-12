@@ -1,17 +1,15 @@
 <template>
-  <nav class="navbar">
+  <nav :class="{'navbar': true, 'scrolled': isScrolled}">
     <div class="container">
       <div class="logo">
         <router-link to="/">
           <img :src="require('@/assets/cloudtec-trans.png')" alt="Consulting Agency Logo" class="logo-img" />
         </router-link>
       </div>
-      <div class="menu-icon" @click="showMenu = !showMenu">
-        <span class="bar">Arxiki</span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+      <div class="menu-icon" >
+        <BurgerMenu @clicked="handleClick" ></BurgerMenu>
       </div>
-      <ul class="nav-links">
+      <ul :class="{'nav-links': true, 'dropdown': showMenu}">
         <li><router-link to="/"><font-awesome-icon icon="house" class="icons"/> Αρχική</router-link></li>
         <li><router-link to="/services"><font-awesome-icon icon="server" class="icons"/> Υπηρεσίες</router-link></li>
         <li><router-link to="/about"><font-awesome-icon icon="address-card" class="icons"/> About Us</router-link></li>
@@ -22,13 +20,49 @@
 </template>
 
 <script>
+import BurgerMenu from './BurgerMenu.vue';
 export default {
   name: 'NavBar',
+
+  components: {
+    BurgerMenu
+  },
 
   data() {
     return {
       showMenu: false,
+      isScrolled: false,
+      shadowWidth: 0
     };
+  },
+
+  methods: {
+    handleScroll() {
+      const scrollTop = window.scrollY;
+      const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / documentHeight) * 100;
+
+      
+      this.shadowWidth = Math.min(scrollPercent, 100); 
+      this.isScrolled = scrollTop > 0; 
+    },
+
+    handleClick() {
+      this.showMenu = !this.showMenu
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+    document.documentElement.style.setProperty('--shadow-width', `${this.shadowWidth}`);
+  },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
+
+  watch: {
+    shadowWidth(newWidth) {
+      document.documentElement.style.setProperty('--shadow-width', newWidth);
+    }
   }
 }
 </script>
@@ -39,7 +73,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 1rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
   position: -webkit-sticky;
 	position: sticky;
   top: 0;
@@ -49,6 +83,26 @@ export default {
   background-color: #1f2d3d;
 }
 
+.navbar::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  box-shadow: 0 2px  #FFC947;
+  transition: width 0.1s ease; 
+  z-index: -1;
+}
+
+
+.navbar.scrolled::after {
+  width: calc(var(--shadow-width, 0) * 1%); 
+}
+
+.menu-icon {
+  display: none;
+}
 .container {
   display: flex;
   justify-content: space-between;
@@ -58,18 +112,6 @@ export default {
   margin: 0 auto;
 }
 
-.menu-icon {
-  display: none;
-  cursor: pointer;
-}
-
-.menu-icon .bar {
-  width: 25px;
-  height: 3px;
-  background-color: #fff;
-  margin: 5px 0;
-  transition: 0.4s;
-}
 
 .logo{
   position: relative;
@@ -95,10 +137,11 @@ export default {
   font-weight: 500;
   transition: color 0.3s ease;
   font-size: 1.3rem;
+  
 }
 
 .nav-links a:hover {
-  color: #2f55d4;
+  color: #FFC947;
 }
 
 
@@ -123,22 +166,37 @@ export default {
 
 @media (max-width: 768px) {
   .nav-links {
-    display: none; /* Hide links by default on mobile */
+    display: flex;
     flex-direction: column;
     position: absolute;
     top: 100%; /* Position below the navbar */
     left: 0;
     width: 100%;
-    background-color: #007bff;
-    padding: 1rem 0;
+    background: rgb(31,45,61);
+background: linear-gradient(180deg, rgba(31,45,61,1) 0%, rgba(47,85,212,1) 16%, rgba(47,85,212,1) 100%);
+    overflow: hidden;
+    max-height: 0;
+    transition: all 0.4s ease; 
+    
   }
 
-  .nav-links.show {
-    display: flex; /* Show links when toggled */
+  /* Dropdown effect when menu is toggled */
+  .nav-links.dropdown {
+    max-height: 500px; /* Adjust this height as needed to fit content */
+    padding: 2rem;
+    width:100%;
+    
   }
 
   .menu-icon {
-    display: block; /* Show hamburger icon on mobile */
+    display: flex;
   }
+
+ .cta-button{
+  display: none;
+ }
 }
+
 </style>
+
+

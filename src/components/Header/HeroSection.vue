@@ -20,22 +20,22 @@
   <style >
   .hero-section {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    grid-template-columns: 1fr 1fr; 
     align-items: center;
     justify-content: center;
     padding: 2rem;
-    grid-column-gap: 0.2rem; /* Space between text and image */
-    margin-top: 7%;
+    grid-column-gap: 0; 
+    height: fit-content;
   }
   
   .hero-content {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align text to the left */
+    align-items: flex-start; 
     justify-content: center;
     text-align: left;
-    max-width: 60%; /* Adjust as needed */
-    margin: 0 auto; /* Centers within the column */
+    max-width: 60%; 
+    margin: 0 auto; 
   }
   
   .hero-title {
@@ -99,6 +99,9 @@
 
   .hero-content {
     max-width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
   }
 
   .hero-title{
@@ -107,6 +110,11 @@
 
   .hero-button{
     margin-bottom: 7%;
+  }
+
+  .hero-image{
+    width: 100%;
+    margin-left: 10%;
   }
 }
   </style>
