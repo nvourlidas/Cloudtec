@@ -14,7 +14,7 @@
         <li><router-link to="/services"><font-awesome-icon icon="server" class="icons"/> Υπηρεσίες</router-link></li>
         <li><router-link to="/about"><font-awesome-icon icon="address-card" class="icons"/> About Us</router-link></li>
       </ul>
-      <button class="cta-button"><font-awesome-icon icon="phone" class="icons"/><router-link to="/contact">Επικοινωία</router-link> </button>
+      <button class="cta-button"><font-awesome-icon icon="phone" class="icons"/><router-link to="/contact"> Επικοινωία</router-link> </button>
     </div>
   </nav>
 </template>
@@ -145,7 +145,11 @@ export default {
 }
 
 
-
+.cta-button a{
+  text-decoration: none;
+  color: inherit; 
+  background: none;
+}
 
 .cta-button {
   padding: 0.5rem 1rem;

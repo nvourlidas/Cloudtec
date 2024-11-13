@@ -1,37 +1,24 @@
 <template>
-    <div v-if="isLoading" class="loading-spinner fadeOut">
-    <SvgLoader></SvgLoader>
-  </div>
-  <div v-else class="home fadeIn">
+    
+  
     <Header></Header>
     <MainPage ></MainPage>
-  </div>
+
 </template>
 
 <script>
 import Header from './Header/headerMain.vue'
-import SvgLoader from './Loader/SvgLoader.vue';
+
 import MainPage from './Main/MainPage.vue';
 
 export default {
   name: 'HomeVue',
   components: {
     Header,
-    SvgLoader,
     MainPage
   },
 
-  data(){
-    return {
-      isLoading: true,
-    }
-  },
-
-  mounted() {
-    setTimeout(() => {
-      this.isLoading = false;
-    }, 2500);
-  },
+ 
 }
 </script>
 
