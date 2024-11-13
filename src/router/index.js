@@ -1,9 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import App from '../App.vue'
+import HomeVue from '@/components/HomeVue.vue'
+import ContactMain from '@/components/Contact/ContactMain.vue'
 
 
 const routes = [
-  { path: '/', component: App },
+  { path: '/', component: HomeVue },
+  { path: '/contact', component: ContactMain },
 
 ]
 

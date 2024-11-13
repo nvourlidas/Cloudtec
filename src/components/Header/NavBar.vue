@@ -14,7 +14,7 @@
         <li><router-link to="/services"><font-awesome-icon icon="server" class="icons"/> Υπηρεσίες</router-link></li>
         <li><router-link to="/about"><font-awesome-icon icon="address-card" class="icons"/> About Us</router-link></li>
       </ul>
-      <button class="cta-button"><font-awesome-icon icon="phone" class="icons"/> Επικοινωία</button>
+      <button class="cta-button"><font-awesome-icon icon="phone" class="icons"/><router-link to="/contact">Επικοινωία</router-link> </button>
     </div>
   </nav>
 </template>
@@ -143,6 +143,7 @@ export default {
 .nav-links a:hover {
   color: #FFC947;
 }
+
 
 
 

@@ -6,7 +6,7 @@
         <button class="hero-button">Ανακάλυψέ το</button>
       </div>
       <div class="hero-image">
-        <img src="@/assets/Data extraction-rafiki.png" alt="Hero Image" />
+        <img src="@/assets/Personal goals-bro.svg" alt="Hero Image" /> 
       </div>
     </section>
   </template>
