@@ -1,57 +1,53 @@
 <template>
-    <NavBar></NavBar>
     <section class="contact-page">
-      <!-- Contact Information Section -->
       <div class="contact-info">
         <div class="info-item">
           <font-awesome-icon icon="phone" class="info-icon" />
-          <h3>Phone</h3>
-          <p>Start working with Landrick that can provide everything</p>
+          <h3>Τηλέφωνο</h3>
           <a href="tel:+152534468854">+152 534-468-854</a>
         </div>
         <div class="info-item">
           <font-awesome-icon icon="envelope" class="info-icon" />
           <h3>Email</h3>
-          <p>Start working with Landrick that can provide everything</p>
+          
           <a href="mailto:contact@example.com">info@cloudtec.gr</a>
         </div>
         <div class="info-item">
           <font-awesome-icon icon="fa-brands fa-instagram" class="info-icon" />
           <h3>Social</h3>
-          <p>C/54 Northwest Freeway, Suite 558, Houston, USA 485</p>
           <a href="https://www.instagram.com/cloudtecgr/" target="_blank">Ακολουθήστε μας</a>
         </div>
       </div>
   
       <!-- Form and Illustration Section -->
       <div class="form-container">
+        <div class="illustration">
+          <img src="@/assets/Contact us-bro.svg" alt="Contact Illustration" />
+        </div>
         <div class="contact-form">
           <h2>Φόρμα Επικοινωνίας</h2>
           <form @submit.prevent="sendEmail">
             <div class="form-group">
                 <label for="name">Όνομα<span class="required">*</span></label>
-                <input type="text" id="name" v-model="name" placeholder="Όνομα" required />
+                <input type="text" id="name" v-model="name" placeholder="Όνομα" required class="feedback-input"/>
             </div>
             <div class="form-group">
                 <label for="email">Email <span class="required">*</span></label>
-                <input type="email" id="email" v-model="email" placeholder="someone@info.com" required />    
+                <input type="email" id="email" v-model="email" placeholder="someone@info.com" required class="feedback-input"/>    
             </div>
             <div class="form-group">
               <label for="subject">Θέμα</label>
-              <input type="text" id="subject" v-model="subject" placeholder="Θέμα" required />
+              <input type="text" id="subject" v-model="subject" placeholder="Θέμα" required class="feedback-input"/>
             </div>
             <div class="form-group">
               <label for="message">Μήνυμα</label>
-              <textarea id="message" v-model="message" placeholder="Γράψτε ένα μήνυμα..." required></textarea>
+              <textarea id="message" v-model="message" placeholder="Γράψτε ένα μήνυμα..." required class="feedback-input"></textarea>
             </div>
             <button type="submit" class="submit-button">Αποστολή</button>
           </form>
           <p v-if="statusMessage">{{ statusMessage }}</p>
         </div>
-        <!-- Illustration Section -->
-        <div class="illustration">
-          <img src="https://path-to-your-illustration.png" alt="Contact Illustration" />
-        </div>
+
       </div>
     </section>
   </template>
@@ -59,14 +55,12 @@
   <script>
   import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
   import emailjs from "emailjs-com";
-  import NavBar from "../Header/NavBar.vue";
 
   
   export default {
     name: 'ContactMain',
     components: {
       FontAwesomeIcon,
-      NavBar
     },
     data() {
       return {
@@ -110,7 +104,7 @@
   .contact-page {
     padding: 2rem;
     color: #ffffff;
-    background-color: #1a2a3a;
+
   }
   
   
@@ -120,7 +114,7 @@
     padding: 2rem 0;
     background-color: #243b55;
     border-radius: 8px;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
   }
   
   .info-item {
@@ -131,7 +125,10 @@
     font-size: 2rem;
     color: #64b5f6;
     margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
   }
+
+
   
   .info-item h3 {
     font-size: 1.2rem;
@@ -155,8 +152,9 @@
   
   .form-container {
     display: flex;
-    align-items: flex-start;
+    align-items:center;
     justify-content: space-between;
+   
   }
   
   .contact-form {
@@ -165,6 +163,7 @@
     border-radius: 8px;
     width: 50%;
     margin-right: 2rem;
+    text-align: center;
   }
   
   .contact-form h2 {
@@ -181,6 +180,7 @@
   .form-group {
     margin-bottom: 1rem;
     width: 100%;
+    text-align: left;
   }
   
   label {
@@ -189,8 +189,27 @@
     color: #b0bec5;
     margin-bottom: 0.5rem;
   }
-  
-  input,
+
+  .feedback-input {
+    color: white;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 5px;
+    line-height: 22px;
+    background-color: transparent;
+    border: 2px solid #2f55d4;
+    transition: all 0.3s;
+    padding: 13px;
+    margin-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: 0;
+}
+.feedback-input:focus {
+    border: 2px solid #FFC947;
+}
+  /* input,
   textarea {
     width: 100%;
     padding: 0.75rem;
@@ -200,7 +219,11 @@
     color: #ffffff;
     font-size: 1rem;
   }
-  
+
+  input:focus{
+    border: 2px solid #FFC947;
+  }
+   */
   input::placeholder,
   textarea::placeholder {
     color: #b0bec5;
@@ -212,7 +235,7 @@
   
   .submit-button {
     padding: 0.75rem 1.5rem;
-    background-color: #007bff;
+    background-color: #2f55d4;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -224,17 +247,18 @@
   }
   
   .submit-button:hover {
-    background-color: #0056b3;
+    background-color: #FFC947;
+    color: #1a2a3a;
   }
   
   .illustration {
-    width: 40%;
+    width: 30%;
   }
   
   .illustration img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
+    
   }
   
   /* Responsive layout for smaller screens */

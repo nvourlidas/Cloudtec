@@ -6,15 +6,26 @@
           <img :src="require('@/assets/cloudtec-trans.png')" alt="Consulting Agency Logo" class="logo-img" />
         </router-link>
       </div>
+      
       <div class="menu-icon" >
         <BurgerMenu @clicked="handleClick" ></BurgerMenu>
       </div>
       <ul :class="{'nav-links': true, 'dropdown': showMenu}">
-        <li><router-link to="/"><font-awesome-icon icon="house" class="icons"/> Αρχική</router-link></li>
-        <li><router-link to="/services"><font-awesome-icon icon="server" class="icons"/> Υπηρεσίες</router-link></li>
-        <li><router-link to="/about"><font-awesome-icon icon="address-card" class="icons"/> About Us</router-link></li>
+        <li><router-link to="/"><font-awesome-icon icon="house" class="icons" /> Αρχική</router-link></li>
+        <li class="dropdown">
+          <router-link to="/services" class="dropdown-link"><font-awesome-icon icon="house" class="icons" /> Υπηρεσίες</router-link>
+          <ul class="dropdown-menu">
+            <li><router-link to="/services/web-development"><font-awesome-icon icon="laptop-code" style="margin-right: 2%;"/> Ιστοσελίδες</router-link></li>
+            <li><router-link to="/services/mobile-development"><font-awesome-icon icon="cart-shopping" style="margin-right: 2%;"/> eShops</router-link></li>
+            <li><router-link to="/services/mobile-development"><font-awesome-icon icon="code" style="margin-right: 2%;"/> Web Apps</router-link></li>
+            <li><router-link to="/services/mobile-development"><font-awesome-icon icon="mobile-screen-button" style="margin-right: 2%;"/> Mobile Apps</router-link></li>
+            <li><router-link to="/services/seo"><font-awesome-icon icon="bullseye" style="margin-right: 2%;"/> Digital Marketing & SEO</router-link></li>
+            <li><router-link to="/services/data-analysis"><font-awesome-icon icon="chart-line" style="margin-right: 2%;"/> Data Analysis & CRM</router-link></li>
+          </ul>
+        </li>
+        <li><router-link to="/about"><font-awesome-icon icon="users" class="icons"/> About Us</router-link></li>
       </ul>
-      <button class="cta-button"><font-awesome-icon icon="phone" class="icons"/><router-link to="/contact"> Επικοινωία</router-link> </button>
+       <button class="cta-button"><router-link to="/contact"> <font-awesome-icon icon="phone" class="icons"/> Επικοινωία </router-link></button>
     </div>
   </nav>
 </template>
@@ -167,6 +178,46 @@ export default {
 .cta-button:hover {
   background-color: #FFC947;
   color: #0A1931;
+}
+
+.dropdown .dropdown-menu {
+  display: block;
+  position: absolute;
+  top: 90;
+  left: 50;
+  background-color: #243b55;
+  border-radius: 8px;
+  padding: 0.7rem 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  list-style: none;
+  width: 250px;
+  z-index: 1000;
+  
+
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown .dropdown-menu li {
+  padding: 0.7rem 1.3rem;
+}
+
+.dropdown .dropdown-menu li a {
+  color: #ffffff;
+  font-size: 1rem;
+  display: block;
+}
+
+.dropdown .dropdown-menu li a:hover {
+  color: #FFC947;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 @media (max-width: 768px) {

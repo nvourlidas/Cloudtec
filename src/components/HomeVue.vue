@@ -1,14 +1,10 @@
-<template>
-    
-  
+<template> 
     <Header></Header>
     <MainPage ></MainPage>
-
 </template>
 
 <script>
 import Header from './Header/headerMain.vue'
-
 import MainPage from './Main/MainPage.vue';
 
 export default {

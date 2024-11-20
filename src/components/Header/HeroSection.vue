@@ -3,17 +3,23 @@
       <div class="hero-content">
         <h1 class="hero-title">Συμβουλευτική που οδηγεί στην<span class="hero-title success"> Eπιτυχία</span></h1>
         <p class="hero-subtitle">Ενδυνάμωση των επιχειρήσεων με καινοτόμες λύσεις και καθοδήγηση από ειδικούς.</p>
-        <button class="hero-button">Ανακάλυψέ το</button>
+        <!-- <button class="hero-button">Ανακάλυψέ το</button> -->
+         <InputButton></InputButton>
       </div>
       <div class="hero-image">
-        <img src="@/assets/Personal goals-bro.svg" alt="Hero Image" /> 
+        <img src="@/assets/Launching-pana.svg" alt="Hero Image" /> 
       </div>
     </section>
   </template>
   
   <script>
+  import InputButton from './InputButton.vue';
   export default {
-    name: 'HeroSection'
+    name: 'HeroSection',
+
+    components: {
+      InputButton
+    }
   }
   </script>
   

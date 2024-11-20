@@ -1,16 +1,33 @@
 <template>
-    <form @submit.prevent="sendEmail">
+ <div class="modal-overlay" >
+      <div class="modal-content">
+        <div class="modal-icon">
+            <font-awesome-icon icon="screwdriver-wrench" />
+        </div>
+
+        
+        <p class="modal-paragraph">
+          Η ιστοσελίδα βρίσκετε ακόμη υπό κατασκευή.
+        </p>
+        <p class="modal-paragraph">
+            Μπορείτε να περιηγηθείτε σε αυτή καθώς και να αφήσετε τη δική σας πρόταση για το τι θα θέλατε να αλλάξουμε ή να προσθέσουμε.
+        </p>
+
+        <form @submit.prevent="sendEmail">
         <input name="name" type="text" class="feedback-input" placeholder="Όνομα" v-model="name" required/>
         <input name="email" type="text" class="feedback-input" placeholder="Email" v-model="email" required/>
-        <textarea name="text" class="feedback-input" placeholder="Μήνυμα ..." v-model="message" required></textarea>
+        <textarea name="text" class="feedback-input" placeholder="Η πρότασή σας ..." v-model="message" required></textarea>
         <input type="submit" value="Αποστολή">
     </form>
+
+      </div>
+    </div>
 </template>
 
 <script>
 import emailjs from "emailjs-com";
 export default {
-    name: "ContactForm",
+    name: "UnderCon",
 
     data() {
     return {
@@ -48,7 +65,48 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.808);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #1f2d3d;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon */
+.modal-icon {
+  font-size: 3rem;
+  color: #2f55d4;
+  margin-bottom: 1rem;
+}
+
+/* Paragraph */
+.modal-paragraph {
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
 form {
     max-width: 420px;
     margin: 50px auto;
@@ -101,5 +159,13 @@ textarea {
 [type="submit"]:hover {
     background: #FFC947;
     color: black;
+}
+
+
+
+@media (max-width: 768px) {
+    .modal-content {
+        max-width: 200px;
+    }
 }
 </style>

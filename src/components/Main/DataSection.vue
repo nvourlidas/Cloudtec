@@ -1,6 +1,6 @@
 <template>
     <section class="how-it-works-section">
-        <h1 class="section-title">Data Analysis & Digital Marketing</h1>
+        <h1 class="section-title">Data Analysis & CRM</h1>
         <div class="content-wrapper">
         <div class="illustration">
         <img src="@/assets/Data extraction (1).gif" alt="Illustration" />

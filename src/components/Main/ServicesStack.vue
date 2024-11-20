@@ -15,7 +15,7 @@
         </ul>
         <p class="service-description">Αποκτήστε μια ολοκληρωμένη λύση που προσελκύει πελάτες και αυξάνει τις πωλήσεις
           σας.</p>
-        <button class="card-button"> + Περισσότερα</button>
+        <button class="card-button"> <font-awesome-icon icon="chevron-up" /> Περισσότερα</button>
       </div>
 
       <div class="service-card">
@@ -33,7 +33,7 @@
         </ul>
         <p class="service-description">Αναβαθμίστε τη λειτουργία της επιχείρησής σας με μια ολοκληρωμένη λύση που αυξάνει την
         παραγωγικότητα και σας δίνει τον έλεγχο σε κάθε στάδιο.</p>
-        <button class="card-button"> + Περισσότερα</button>
+        <button class="card-button"> <font-awesome-icon icon="chevron-up" /> Περισσότερα</button>
       </div>
 
       <div class="service-card">
@@ -48,7 +48,7 @@
         <p class="service-description">Δημιουργούμε
         custom mobile apps που ενισχύουν την εμπειρία του χρήστη, αυξάνουν την αφοσίωση και σας φέρνουν πιο κοντά στο
         κοινό σας. Κάντε το πρώτο βήμα στην ανάπτυξη της επιχείρησής σας στον mobile κόσμο!</p>
-        <button class="card-button"> + Περισσότερα</button>
+        <button class="card-button"> <font-awesome-icon icon="chevron-up" /> Περισσότερα</button>
       </div>
     </div>
 
@@ -132,7 +132,7 @@ li {
   border: none;
   background-color: #2f55d4;
   color: #fff;
-  font-size: 1rem;
+  font-size: 1.3rem;
   padding: .5rem 1rem;
   position: absolute;
   left: 50%;
@@ -140,6 +140,11 @@ li {
   opacity: 0;
   transition: 0.3s ease-out;
   cursor: pointer;
+}
+
+.card-button:hover {
+  color: #FFC947;
+  background-color: transparent;
 }
 
 .service-card:hover {
