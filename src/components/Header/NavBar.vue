@@ -13,9 +13,9 @@
       <ul :class="{'nav-links': true, 'dropdown': showMenu}">
         <li><router-link to="/"><font-awesome-icon icon="house" class="icons" /> Αρχική</router-link></li>
         <li class="dropdown">
-          <router-link to="/services" class="dropdown-link"><font-awesome-icon icon="house" class="icons" /> Υπηρεσίες</router-link>
+          <router-link to="#" class="dropdown-link"><font-awesome-icon icon="server" class="icons" /> Υπηρεσίες</router-link>
           <ul class="dropdown-menu">
-            <li><router-link to="/services/web-development"><font-awesome-icon icon="laptop-code" style="margin-right: 2%;"/> Ιστοσελίδες</router-link></li>
+            <li><router-link to="/services/websites"><font-awesome-icon icon="laptop-code" style="margin-right: 2%;"/> Ιστοσελίδες</router-link></li>
             <li><router-link to="/services/mobile-development"><font-awesome-icon icon="cart-shopping" style="margin-right: 2%;"/> eShops</router-link></li>
             <li><router-link to="/services/mobile-development"><font-awesome-icon icon="code" style="margin-right: 2%;"/> Web Apps</router-link></li>
             <li><router-link to="/services/mobile-development"><font-awesome-icon icon="mobile-screen-button" style="margin-right: 2%;"/> Mobile Apps</router-link></li>
