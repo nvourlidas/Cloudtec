@@ -33,9 +33,8 @@
       <!-- Contact Information -->
       <div class="footer-contact">
         <h3 class="footer-title">Επικοινωία</h3>
-        <p><font-awesome-icon icon="map-marker-alt" /> 123 Street, City, Country</p>
-        <p><font-awesome-icon icon="phone" /> +123 456 7890</p>
-        <p><font-awesome-icon icon="envelope" /> contact@yourcompany.com</p>
+        <p><font-awesome-icon icon="mobile-screen-button" style="margin: 2%;"/>  +30 6985786121</p>
+        <p><font-awesome-icon icon="envelope" style="margin: 2%;"/>  info@cloudtec.gr</p>
       </div>
       <div class="footer-copyright">
       &copy; 2024 Cloudtec.gr. All rights reserved.

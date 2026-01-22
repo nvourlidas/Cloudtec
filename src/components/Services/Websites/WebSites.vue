@@ -11,7 +11,7 @@
 
       </div>
       <div class="hero-image">
-        <img src="@/assets/Software engineer-amico.png" alt="Web Development" />
+        <img src="@/assets/Software engineer-amico.svg" alt="Web Development" />
       </div>
     </section>
 
@@ -232,7 +232,7 @@ export default {
 .services-section {
   padding: 7rem 1rem;
   text-align: center;
-  border-top: 2px solid #2f55d4;
+
 
 }
 

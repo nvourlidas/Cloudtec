@@ -11,7 +11,7 @@
 
         
         <div class="form-wrapper">
-            <img src="@/assets/Contact us-amico.png" alt="Illustration" class="illustration" />
+            <img src="@/assets/Contact us-amico.svg" alt="Illustration" class="illustration" />
             <ContactForm></ContactForm>
             <!-- 
             <form class="contact-form">

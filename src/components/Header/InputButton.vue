@@ -79,5 +79,16 @@
     color: #1a2a3a;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   }
+
+  @media (max-width: 768px){
+    .email-subscribe{
+      max-width: 300px;
+      
+    }
+     
+    .subscribe-button{
+      font-size: 1rem;
+    }
+  }
   </style>
   
