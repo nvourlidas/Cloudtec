@@ -26,8 +26,6 @@
                   style="margin-right: 2%;" /> Web Apps</router-link></li>
             <li><router-link to="/services/mobileapps"><font-awesome-icon icon="mobile-screen-button"
                   style="margin-right: 2%;" /> Mobile Apps</router-link></li>
-            <li><router-link to="/services/digitalmarketing"><font-awesome-icon icon="bullseye" style="margin-right: 2%;" /> Digital
-                Marketing & SEO</router-link></li>
             <li><router-link to="/services/dataanalysis"><font-awesome-icon icon="chart-line"
                   style="margin-right: 2%;" /> Data Analysis & CRM</router-link></li>
           </ul>

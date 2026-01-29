@@ -157,7 +157,7 @@ export default {
             tracking,
             profile
           ],
-          links: { play: '...', appstore: '...', caseStudy: true }
+          links: { play: '...', appstore: 'https://apps.apple.com/gr/app/cloudtec-gym/id6757802948', caseStudy: true }
         },
         
          {

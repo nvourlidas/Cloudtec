@@ -19,7 +19,8 @@
           <li><span class="check-icon">✔</span> Στοχευμένο Marketing: Δημιουργούμε καμπάνιες που προσεγγίζουν το ιδανικό κοινό σας.</li>
           <li><span class="check-icon">✔</span> Βελτιστοποίηση Απόδοσης: Παρακολουθούμε και προσαρμόζουμε τις στρατηγικές για μέγιστα αποτελέσματα</li>
         </ul>
-        <a href="#" class="link">Δείτε Περισσότερα &rarr;</a>
+        <!-- <a href="/services/dataanalysis" class="link">Δείτε Περισσότερα &rarr;</a> -->
+        <router-link to="/services/dataanalysis" class="link"> Δείτε Περισσότερα &rarr;</router-link>
       </div>
     </div>
     </section>

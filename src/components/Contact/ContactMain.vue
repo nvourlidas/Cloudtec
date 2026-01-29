@@ -4,7 +4,7 @@
       <div class="info-item">
         <font-awesome-icon icon="phone" class="info-icon" />
         <h3>Τηλέφωνο</h3>
-        <a href="tel:+152534468854">+152 534-468-854</a>
+        <a href="tel:+306985786121">+30 6985786121</a>
       </div>
       <div class="info-item">
         <font-awesome-icon icon="envelope" class="info-icon" />
@@ -26,7 +26,7 @@
           <a href="https://www.facebook.com/profile.php?id=61560259991865" target="_blank" class="socialicon facebook">
             <font-awesome-icon :icon="['fab', 'facebook-f']" class="icon" />
           </a>
-          <a href="https://www.linkedin.com" target="_blank" class="socialicon linkedin">
+          <a href="https://www.linkedin.com/company/cloudtecgr" target="_blank" class="socialicon linkedin">
             <font-awesome-icon :icon="['fab', 'linkedin-in']" class="icon" />
           </a>
         </div>
