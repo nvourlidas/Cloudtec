@@ -23,7 +23,7 @@
   
         <div class="process-step">
           <font-awesome-icon :icon="['fas', 'lightbulb']" class="step-icon" />
-          <h3 class="step-title">Στρατιγική & Testing</h3>
+          <h3 class="step-title">Στρατηγική & Testing</h3>
           <p class="step-description">
             Διαμορφώνουμε την κατάλληλη στρατηγική και δοκιμάζουμε τις λύσεις μας, εξασφαλίζοντας υψηλή απόδοση και αποτελέσματα που ανταποκρίνονται στις προσδοκίες σας
           </p>

@@ -1,31 +1,59 @@
 <template>
-    <section class="how-it-works-section">
-        <h1 class="section-title">Data Analysis & CRM</h1>
-        <div class="content-wrapper">
-        <div class="illustration">
-        <img src="@/assets/Data extraction (1).gif" alt="Illustration" />
+  <section class="how-it-works-section">
+    <!-- ✅ SEO: H2 αντί για H1 -->
+    <h2 class="section-title">Data Analysis & CRM για Επιχειρήσεις</h2>
+
+    <div class="content-wrapper">
+      <div class="illustration">
+        <img
+          src="@/assets/Data extraction (1).gif"
+          alt="Ανάλυση δεδομένων και CRM dashboards για επιχειρήσεις"
+        />
       </div>
+
       <div class="content">
-        <h2 class="subtitle">Πως δουλεύει;</h2>
+        <h3 class="subtitle">Πώς δουλεύει;</h3>
+
         <p class="description">
-            Αναλύουμε τα δεδομένα σας και δημιουργούμε στρατηγικές digital marketing για στοχευμένα αποτελέσματα.
+          Αναλύουμε τα δεδομένα σας και δημιουργούμε CRM & στρατηγικές digital marketing
+          για στοχευμένα και μετρήσιμα αποτελέσματα.
         </p>
-        <h3 class="main-title">Βάλε την επιχείρησή σου στον κόσμο των <p class="main-title data">Δεδομένων!</p></h3>
+
+        <!-- ✅ SEO: σωστή επικεφαλίδα χωρίς nested <p> -->
+        <h3 class="main-title">
+          Βάλε την επιχείρησή σου στον κόσμο των
+          <span class="main-title data">Δεδομένων</span>
+        </h3>
+
         <p class="text">
-            Με την αξιοποίηση των δεδομένων και προηγμένες στρατηγικές digital marketing, βοηθάμε την επιχείρησή σας να αναπτυχθεί:
+          Με την αξιοποίηση δεδομένων, dashboards και CRM εργαλείων,
+          βοηθάμε την επιχείρησή σας να παίρνει καλύτερες αποφάσεις και να αναπτύσσεται.
         </p>
+
         <ul class="features">
-          <li><span class="check-icon">✔</span> Ανάλυση Δεδομένων: Μετατρέπουμε τα δεδομένα σας σε πρακτικές γνώσεις.</li>
-          <li><span class="check-icon">✔</span> Στοχευμένο Marketing: Δημιουργούμε καμπάνιες που προσεγγίζουν το ιδανικό κοινό σας.</li>
-          <li><span class="check-icon">✔</span> Βελτιστοποίηση Απόδοσης: Παρακολουθούμε και προσαρμόζουμε τις στρατηγικές για μέγιστα αποτελέσματα</li>
+          <li>
+            <span class="check-icon">✔</span>
+            <strong>Ανάλυση Δεδομένων:</strong> Μετατρέπουμε τα δεδομένα σας σε πρακτικές γνώσεις.
+          </li>
+          <li>
+            <span class="check-icon">✔</span>
+            <strong>CRM & Στοχευμένο Marketing:</strong> Καμπάνιες βασισμένες σε πραγματική συμπεριφορά χρηστών.
+          </li>
+          <li>
+            <span class="check-icon">✔</span>
+            <strong>Βελτιστοποίηση Απόδοσης:</strong> Παρακολούθηση KPIs και συνεχή βελτίωση στρατηγικών.
+          </li>
         </ul>
-        <!-- <a href="/services/dataanalysis" class="link">Δείτε Περισσότερα &rarr;</a> -->
-        <router-link to="/services/dataanalysis" class="link"> Δείτε Περισσότερα &rarr;</router-link>
+
+        <!-- ✅ SEO: internal link -->
+        <router-link to="/services/dataanalysis" class="seo-link">
+          Δείτε περισσότερα για Data Analysis & CRM →
+        </router-link>
       </div>
     </div>
-    </section>
-  </template>
-  
+  </section>
+</template>
+
   <script>
   export default {
     name: "HowItWorksSection"
@@ -132,6 +160,27 @@
     width: 100%;
     height: auto;
   }
+
+  /* SEO / inline router links */
+.seo-link {
+  color: #f5c542;
+  font-weight: 600;
+  border-bottom: 2px solid rgba(245, 197, 66, 0.6);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.seo-link:hover {
+  border-bottom-color: #ffd86b;
+}
+
+
+.seo-link:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(245, 197, 66, 0.35);
+  border-radius: 2px;
+}
+
 
 
   @media (max-width: 768px) {

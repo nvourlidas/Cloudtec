@@ -2,76 +2,116 @@
   <section class="services-section">
     <div class="services-container">
       <header class="services-header">
-        <h2 class="services-heading">Υπηρεσίες</h2>
+        <!-- ✅ SEO: πιο στοχευμένο H2 -->
+        <h2 class="services-heading">Υπηρεσίες Ανάπτυξης Λογισμικού</h2>
+
         <p class="services-subheading">
           Χτίζουμε σύγχρονες λύσεις για να αποκτήσεις πελάτες, να οργανώσεις διαδικασίες και να αναπτυχθείς.
         </p>
+
+        <!-- ✅ SEO: internal links (soft) -->
+        <p class="services-subheading" style="margin-top: 10px; font-size: 0.98rem;">
+          Δημοφιλή:
+          <router-link class="seo-link" to="/services/websites">Ιστοσελίδες</router-link>
+          ·
+          <router-link class="seo-link" to="/services/eshops">eShop</router-link>
+          ·
+          <router-link class="seo-link" to="/services/webapps">Web Apps</router-link>
+          ·
+          <router-link class="seo-link" to="/services/mobileapps">Mobile Apps</router-link>
+        </p>
       </header>
+
       <div class="services-list">
         <div class="service-card">
-          <img src="@/assets/Online ads-rafiki.svg" alt="investment" class="service-icon" />
+          <!-- ✅ SEO: proper alt -->
+          <img
+            src="@/assets/Online ads-rafiki.svg"
+            alt="Κατασκευή ιστοσελίδων και eShop για επιχειρήσεις"
+            class="service-icon"
+          />
+
           <h3 class="service-title">Ιστοσελίδες & eShop</h3>
-          <p class="service-description"><b>Δημιουργήστε την online παρουσία που σας αξίζει!</b> Αναλαμβάνουμε την
-            κατασκευή:
+          <p class="service-description">
+            <b>Δημιουργήστε την online παρουσία που σας αξίζει!</b> Αναλαμβάνουμε την κατασκευή:
           </p>
           <ul>
-            <li> <font-awesome-icon icon="gear" style="color: #FFC947 ;" /> Eπαγγελματικών ιστοσελίδων</li>
-            <li> <font-awesome-icon icon="gear" style="color: #FFC947 ;" /> eShops</li>
+            <li><font-awesome-icon icon="gear" style="color: #FFC947 ;" /> Επαγγελματικών ιστοσελίδων</li>
+            <li><font-awesome-icon icon="gear" style="color: #FFC947 ;" /> eShops</li>
             <li><font-awesome-icon icon="gear" style="color: #FFC947 ;" /> SEO</li>
-            <li><font-awesome-icon icon="gear" style="color: #FFC947 ;" /> Bελτιστοποίηση για
-              κινητά</li>
+            <li><font-awesome-icon icon="gear" style="color: #FFC947 ;" /> Βελτιστοποίηση για κινητά</li>
           </ul>
-          <p class="service-description">Αποκτήστε μια ολοκληρωμένη λύση που προσελκύει πελάτες και αυξάνει τις πωλήσεις
-            σας.</p>
-          <router-link to="/services/websites" class="card-button">
-            <font-awesome-icon icon="chevron-up" /> Περισσότερα
+          <p class="service-description">
+            Αποκτήστε μια ολοκληρωμένη λύση που προσελκύει πελάτες και αυξάνει τις πωλήσεις σας.
+          </p>
+
+          <!-- ✅ SEO: descriptive link text -->
+          <router-link to="/services/websites" class="card-button" aria-label="Δείτε περισσότερα για κατασκευή ιστοσελίδων">
+            <font-awesome-icon icon="chevron-up" /> Δείτε Ιστοσελίδες
           </router-link>
         </div>
 
         <div class="service-card">
-          <img src="@/assets/Work time-amico.svg" alt="investment" class="service-icon" />
+          <img
+            src="@/assets/Work time-amico.svg"
+            alt="Ανάπτυξη web εφαρμογών και online πλατφορμών για επιχειρήσεις"
+            class="service-icon"
+          />
+
           <h3 class="service-title">Online Πλατφόρμες</h3>
-          <p class="service-description"><b>Οργανώστε την επιχείρησή σας, απλοποιήστε τη διαχείριση! </b>Δημιουργούμε
-            εξατομικευμένες online πλατφόρμες για εύκολη διαχείριση:</p>
+          <p class="service-description">
+            <b>Οργανώστε την επιχείρησή σας, απλοποιήστε τη διαχείριση!</b>
+            Δημιουργούμε εξατομικευμένες online πλατφόρμες για εύκολη διαχείριση:
+          </p>
           <ul>
-            <li> <font-awesome-icon icon="gear" style="color: #FFC947 ;" /> Πελατών</li>
-            <li> <font-awesome-icon icon="gear" style="color: #FFC947 ;" /> Προϊόντων</li>
-            <li> <font-awesome-icon icon="gear" style="color: #FFC947 ;" /> Αποθεμάτων</li>
-            <li> <font-awesome-icon icon="gear" style="color: #FFC947 ;" /> Και οτιδήποτε άλλο χρειάζεται η επιχείρησή
-              σου
+            <li><font-awesome-icon icon="gear" style="color: #FFC947 ;" /> Πελατών</li>
+            <li><font-awesome-icon icon="gear" style="color: #FFC947 ;" /> Προϊόντων</li>
+            <li><font-awesome-icon icon="gear" style="color: #FFC947 ;" /> Αποθεμάτων</li>
+            <li>
+              <font-awesome-icon icon="gear" style="color: #FFC947 ;" />
+              Και οτιδήποτε άλλο χρειάζεται η επιχείρησή σου
             </li>
-            <li> <font-awesome-icon icon="gear" style="color: #FFC947 ;" /> Όλα σε ένα μέρος</li>
+            <li><font-awesome-icon icon="gear" style="color: #FFC947 ;" /> Όλα σε ένα μέρος</li>
           </ul>
-          <p class="service-description">Αναβαθμίστε τη λειτουργία της επιχείρησής σας με μια ολοκληρωμένη λύση που
-            αυξάνει την
-            παραγωγικότητα και σας δίνει τον έλεγχο σε κάθε στάδιο.</p>
-          <router-link to="/services/webapps" class="card-button">
-            <font-awesome-icon icon="chevron-up" /> Περισσότερα
+          <p class="service-description">
+            Αναβαθμίστε τη λειτουργία της επιχείρησής σας με μια λύση που αυξάνει την παραγωγικότητα
+            και σας δίνει τον έλεγχο σε κάθε στάδιο.
+          </p>
+
+          <router-link to="/services/webapps" class="card-button" aria-label="Δείτε περισσότερα για web εφαρμογές και online πλατφόρμες">
+            <font-awesome-icon icon="chevron-up" /> Δείτε Web Apps
           </router-link>
         </div>
 
         <div class="service-card">
-          <img src="@/assets/Catalogue-cuate.svg" alt="investment" class="service-icon" />
+          <img
+            src="@/assets/Catalogue-cuate.svg"
+            alt="Ανάπτυξη mobile εφαρμογών για Android και iOS"
+            class="service-icon"
+          />
+
           <h3 class="service-title">Mobile Apps</h3>
-          <p class="service-description"><b>Αποκτήστε την εφαρμογή που χρειάζεται η επιχείρησή σας!</b> Αναλαμβάνουμε
-            την
-            κατασκευή εφαρμογών:</p>
+          <p class="service-description">
+            <b>Αποκτήστε την εφαρμογή που χρειάζεται η επιχείρησή σας!</b> Αναλαμβάνουμε την κατασκευή εφαρμογών:
+          </p>
           <ul>
-            <li> <font-awesome-icon icon="gear" style="color: #FFC947 ;" /> Android</li>
-            <li> <font-awesome-icon icon="gear" style="color: #FFC947 ;" /> iOS</li>
+            <li><font-awesome-icon icon="gear" style="color: #FFC947 ;" /> Android</li>
+            <li><font-awesome-icon icon="gear" style="color: #FFC947 ;" /> iOS</li>
           </ul>
-          <p class="service-description">Δημιουργούμε
-            custom mobile apps που ενισχύουν την εμπειρία του χρήστη, αυξάνουν την αφοσίωση και σας φέρνουν πιο κοντά
-            στο
-            κοινό σας. Κάντε το πρώτο βήμα στην ανάπτυξη της επιχείρησής σας στον mobile κόσμο!</p>
-          <router-link to="/services/mobileapps" class="card-button">
-            <font-awesome-icon icon="chevron-up" /> Περισσότερα
+          <p class="service-description">
+            Δημιουργούμε custom mobile apps που ενισχύουν την εμπειρία του χρήστη, αυξάνουν την αφοσίωση
+            και σας φέρνουν πιο κοντά στο κοινό σας.
+          </p>
+
+          <router-link to="/services/mobileapps" class="card-button" aria-label="Δείτε περισσότερα για ανάπτυξη mobile εφαρμογών">
+            <font-awesome-icon icon="chevron-up" /> Δείτε Mobile Apps
           </router-link>
         </div>
       </div>
     </div>
   </section>
 </template>
+
 
 <script>
 export default {
@@ -219,6 +259,28 @@ li {
   color: #FFC947;
   background-color: rgba(47, 85, 212, 0.25);
 }
+
+
+/* SEO / inline router links */
+.seo-link {
+  color: #f5c542;
+  font-weight: 600;
+  border-bottom: 2px solid rgba(245, 197, 66, 0.6);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.seo-link:hover {
+  border-bottom-color: #ffd86b;
+}
+
+
+.seo-link:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(245, 197, 66, 0.35);
+  border-radius: 2px;
+}
+
 
 /* RESPONSIVE */
 @media (max-width: 768px) {

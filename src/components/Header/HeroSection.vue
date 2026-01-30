@@ -15,7 +15,7 @@
 
     </div>
     <div class="hero-image">
-      <img src="@/assets/Launching-pana.svg" alt="Hero Image" />
+      <img src="@/assets/Launching-pana.svg" alt="CloudTec ανάπτυξη web και mobile εφαρμογών για επιχειρήσεις" />
     </div>
   </section>
 </template>

@@ -3,19 +3,34 @@
     <!-- HERO -->
     <section class="hero">
       <div class="hero-content">
-        <h1>Υπηρεσίες Ανάπτυξης Web Apps</h1>
+        <!-- ✅ SEO: πιο στοχευμένο H1 keyword -->
+        <h1>Κατασκευή Web Apps για Επιχειρήσεις</h1>
+
         <p>
-          Χτίζουμε web εφαρμογές που οργανώνουν την επιχείρησή σου, αυτοματοποιούν διαδικασίες
-          και δίνουν καθαρή εικόνα με δεδομένα σε πραγματικό χρόνο.
+          Χτίζουμε custom web εφαρμογές (CRM, κρατήσεις, dashboards, portals) που οργανώνουν την επιχείρησή σου,
+          αυτοματοποιούν διαδικασίες και δίνουν καθαρή εικόνα με δεδομένα σε πραγματικό χρόνο.
         </p>
+
         <div class="hero-cta">
           <router-link class="cta-primary" to="/contact">Ζητήστε Προσφορά</router-link>
           <a class="cta-secondary" href="#demo">Δείτε Demo</a>
         </div>
+
+        <!-- ✅ SEO: internal links (soft) -->
+        <p class="muted">
+          Δείτε επίσης:
+          <router-link class="seo-link" to="/services/mobileapps">Mobile Apps</router-link>
+          ·
+          <router-link class="seo-link" to="/services/dataanalysis">Data Analysis</router-link>
+          ·
+          <router-link class="seo-link" to="/services/websites">Ιστοσελίδες</router-link>
+        </p>
       </div>
 
       <div class="hero-image">
-        <img src="@/assets/Data extraction-cuate.svg" alt="Web Apps" />
+        <!-- ✅ SEO: πιο περιγραφικό alt -->
+        <img src="@/assets/Data extraction-cuate.svg"
+          alt="Κατασκευή web εφαρμογών για επιχειρήσεις (CRM, dashboards, portals)" />
       </div>
     </section>
 
@@ -43,6 +58,31 @@
           <div class="info-card">
             <div class="info-title">Δεδομένα & Έλεγχος</div>
             <div class="info-text">Dashboards, αναφορές, KPIs, alerts.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ SEO: Use cases section -->
+    <section class="section">
+      <div class="container">
+        <h2>Τι Web Apps αναπτύσσουμε</h2>
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-title">CRM & Διαχείριση Πελατών</div>
+            <div class="why-text">Πελάτες, leads, ιστορικό επικοινωνίας, tasks, reminders.</div>
+          </div>
+          <div class="why-card">
+            <div class="why-title">Κρατήσεις & Ραντεβού</div>
+            <div class="why-text">Ημερολόγιο, διαθεσιμότητες, αυτοματοποιημένες ειδοποιήσεις.</div>
+          </div>
+          <div class="why-card">
+            <div class="why-title">Dashboards & Αναφορές</div>
+            <div class="why-text">KPIs, reports και real-time εικόνα της επιχείρησης.</div>
+          </div>
+          <div class="why-card">
+            <div class="why-title">Portals Πελατών / Συνεργατών</div>
+            <div class="why-text">Login, αρχεία, αιτήματα, συμβάσεις, παρακολούθηση υποθέσεων.</div>
           </div>
         </div>
       </div>
@@ -78,6 +118,42 @@
       </div>
     </section>
 
+    <!-- ✅ SEO: Process / trust section -->
+    <section class="section">
+      <div class="container">
+        <div>
+          <h2>Πώς δουλεύουμε στην CloudTec</h2>
+        </div>
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-title">Ανάλυση & Προδιαγραφές</div>
+            <div class="why-text">Καταγράφουμε ανάγκες, ροές και στόχους πριν γράψουμε κώδικα.</div>
+          </div>
+          <div class="why-card">
+            <div class="why-title">UI/UX & Prototype</div>
+            <div class="why-text">Σχεδιάζουμε καθαρή εμπειρία χρήστη και δοκιμάζουμε τη ροή.</div>
+          </div>
+          <div class="why-card">
+            <div class="why-title">Υλοποίηση & Ασφάλεια</div>
+            <div class="why-text">Ρόλοι, permissions, backups και σωστή αρχιτεκτονική.</div>
+          </div>
+          <div class="why-card">
+            <div class="why-title">Παράδοση & Υποστήριξη</div>
+            <div class="why-text">Σταθερότητα, monitoring και βελτιώσεις με βάση δεδομένα.</div>
+          </div>
+        </div>
+
+        <div>
+          <p class="muted">
+            Θες να δεις και άλλες λύσεις;
+            <router-link class="seo-link" to="/services/mobileapps">Mobile Apps</router-link>
+            ή
+            <router-link class="seo-link" to="/services/dataanalysis">Data Analysis</router-link>.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- CTA -->
     <section class="cta">
       <div class="container cta-inner">
@@ -90,6 +166,7 @@
     </section>
   </div>
 </template>
+
 
 <script>
 import MockAdminDemo from './MockAdminDemo.vue';
@@ -114,6 +191,7 @@ export default {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  flex-direction: column;
 }
 
 .muted {
@@ -267,6 +345,28 @@ export default {
   margin: 0 auto;
 
 }
+
+
+/* SEO / inline router links */
+.seo-link {
+  color: #f5c542;
+  font-weight: 600;
+  border-bottom: 2px solid rgba(245, 197, 66, 0.6);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.seo-link:hover {
+  border-bottom-color: #ffd86b;
+}
+
+
+.seo-link:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(245, 197, 66, 0.35);
+  border-radius: 2px;
+}
+
 
 /* responsive */
 @media (max-width: 980px) {

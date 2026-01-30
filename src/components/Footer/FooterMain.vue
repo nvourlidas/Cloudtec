@@ -1,9 +1,13 @@
 <template>
   <footer class="footer">
-    <!-- Logo and Description -->
+    <!-- Logo -->
     <div class="footer-brand">
-      <router-link to="/">
-        <img :src="require('@/assets/cloudtec-trans.png')" alt="Consulting Agency Logo" class="logo-img" />
+      <router-link to="/" aria-label="Αρχική CloudTec">
+        <img
+          :src="require('@/assets/cloudtec-trans.png')"
+          alt="CloudTec - Web Apps, Mobile Apps και Digital Solutions"
+          class="logo-img"
+        />
       </router-link>
     </div>
 
@@ -22,21 +26,30 @@
     <!-- Social Media Links -->
     <div class="footer-social">
       <h3 class="footer-title">Follow Us</h3>
-      <SocialSection></SocialSection>
+      <SocialSection />
     </div>
 
     <!-- Contact Information -->
     <div class="footer-contact">
-      <h3 class="footer-title">Επικοινωία</h3>
-      <p><font-awesome-icon icon="mobile-screen-button" style="margin: 2%;" /> +30 6985786121</p>
-      <p><font-awesome-icon icon="envelope" style="margin: 2%;" /> info@cloudtec.gr</p>
+      <h3 class="footer-title">Επικοινωνία</h3>
+
+      <p>
+        <font-awesome-icon icon="mobile-screen-button" style="margin: 2%;" />
+        <a class="contact-link" href="tel:+306985786121">+30 698 578 6121</a>
+      </p>
+
+      <p>
+        <font-awesome-icon icon="envelope" style="margin: 2%;" />
+        <a class="contact-link" href="mailto:info@cloudtec.gr">info@cloudtec.gr</a>
+      </p>
     </div>
+
     <div class="footer-copyright">
       &copy; {{ currentYear }} Cloudtec.gr. All rights reserved.
     </div>
   </footer>
-
 </template>
+
 
 <script>
 import SocialSection from './SocialSection.vue';
@@ -150,6 +163,14 @@ export default {
   font-size: 1rem;
   border-top: 1px solid #3a4a5a;
 }
+
+
+.contact-link {
+  color: #b0bec5;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
 
 /* Responsive layout for smaller screens */
 @media (max-width: 768px) {

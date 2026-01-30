@@ -3,15 +3,28 @@
     <!-- Hero Section -->
     <section class="hero-section">
       <div class="hero-content">
-        <h1>Κατασκευή Ιστοσελίδων</h1>
+        <!-- ✅ SEO: πιο στοχευμένο H1 -->
+        <h1>Κατασκευή Ιστοσελίδων για Επιχειρήσεις</h1>
+
         <p>
-          Ενδυναμώστε την επιχείρησή σας με λύσεις αιχμής στο διαδίκτυο. Από αποκριτικά σχέδια έως ισχυρή
-          λειτουργικότητα, δημιουργούμε ιστότοπους που οδηγούν στην επιτυχία.
+          Ενδυναμώστε την επιχείρησή σας με σύγχρονες, γρήγορες και SEO-friendly ιστοσελίδες.
+          Από responsive design έως ισχυρή λειτουργικότητα, δημιουργούμε websites που φέρνουν πελάτες και αποτελέσματα.
         </p>
 
+        <!-- ✅ SEO: internal links -->
+        <p class="muted">
+          Δείτε επίσης:
+          <router-link class="seo-link" to="/services/mobileapps">Mobile Apps</router-link>
+          ·
+          <router-link class="seo-link" to="/services/webapps">Web Apps</router-link>
+          ·
+          <router-link class="seo-link" to="/services/eshops">e-Shops</router-link>
+        </p>
       </div>
+
       <div class="hero-image">
-        <img src="@/assets/Software engineer-amico.svg" alt="Web Development" />
+        <img src="@/assets/Software engineer-amico.svg"
+          alt="Κατασκευή ιστοσελίδων για επιχειρήσεις με responsive design και SEO" />
       </div>
     </section>
 
@@ -24,47 +37,50 @@
           <h3>Προσαρμοσμένος Σχεδιασμός</h3>
           <div class="card__content">
             <p class="card__title">Προσαρμοσμένος Σχεδιασμός</p>
-            <p class="card__description">Δημιουργούμε εξατομικευμένα websites που αντικατοπτρίζουν την ταυτότητα της
-              επιχείρησής σας, συνδυάζοντας καινοτόμο σχεδιασμό με υψηλή λειτουργικότητα για μια μοναδική εμπειρία
-              χρήστη.
+            <p class="card__description">
+              Δημιουργούμε εξατομικευμένα websites που αντικατοπτρίζουν την ταυτότητα της επιχείρησής σας,
+              συνδυάζοντας καινοτόμο σχεδιασμό με υψηλή λειτουργικότητα για μια μοναδική εμπειρία χρήστη.
             </p>
           </div>
         </div>
+
         <div class="service-card">
           <font-awesome-icon :icon="['fas', 'screwdriver-wrench']" class="service-icon" />
           <h3>Συντήρηση και Υποστήριξη</h3>
-
           <div class="card__content">
             <p class="card__title">Συντήρηση και Υποστήριξη</p>
-            <p class="card__description">Προσφέρουμε υπηρεσίες συντήρησης και υποστήριξης για την ιστοσελίδα σας,
-              διασφαλίζοντας την απρόσκοπτη λειτουργία, την ασφάλεια και την έγκαιρη επίλυση προβλημάτων.
+            <p class="card__description">
+              Προσφέρουμε υπηρεσίες συντήρησης και υποστήριξης για την ιστοσελίδα σας,
+              διασφαλίζοντας απρόσκοπτη λειτουργία, ασφάλεια και έγκαιρη επίλυση προβλημάτων.
             </p>
           </div>
         </div>
+
         <div class="service-card">
           <font-awesome-icon :icon="['fab', 'google']" class="service-icon" />
           <h3>SEO</h3>
-
           <div class="card__content">
             <p class="card__title">SEO</p>
-            <h6>"Βελτιστοποίηση Μηχανών Αναζήτησης"</h6>
-            <p class="card__description">Αναβαθμίζουμε την παρουσία σας στο διαδίκτυο με προηγμένες υπηρεσίες SEO,
-              εξασφαλίζοντας υψηλότερη κατάταξη στις μηχανές αναζήτησης,
-              αυξημένη επισκεψιμότητα και περισσότερους πελάτες για την επιχείρησή σας.
+            <h6>Βελτιστοποίηση Μηχανών Αναζήτησης</h6>
+            <p class="card__description">
+              Αναβαθμίζουμε την παρουσία σας στο διαδίκτυο με on-page και technical SEO,
+              ώστε να κερδίζετε καλύτερη κατάταξη, αυξημένη επισκεψιμότητα και περισσότερους πελάτες.
             </p>
           </div>
         </div>
+
         <div class="service-card">
           <font-awesome-icon :icon="['fas', 'mobile-alt']" class="service-icon" />
-          <h3>Σχεδιασμός για κινητά</h3>
+          <h3>Σχεδιασμός για Κινητά</h3>
           <div class="card__content">
-            <p class="card__title">Σχεδιασμός για κινητά</p>
-            <p class="card__description">Δημιουργούμε ιστοσελίδες με σχεδιασμό φιλικό προς κινητές συσκευές,
-              εξασφαλίζοντας άψογη εμφάνιση και λειτουργικότητα σε κάθε οθόνη.
+            <p class="card__title">Σχεδιασμός για Κινητά</p>
+            <p class="card__description">
+              Δημιουργούμε ιστοσελίδες mobile-first, εξασφαλίζοντας άψογη εμφάνιση και λειτουργικότητα σε κάθε οθόνη.
             </p>
           </div>
         </div>
       </div>
+
       <ul class="services-list">
         <li v-for="(service, index) in services" :key="index" class="service-item">
           <font-awesome-icon :icon="service.icon" class="service-icon2" />
@@ -77,7 +93,7 @@
     </section>
 
     <div class="why-choose-us-section">
-      <h2>Γιατί Εμάς;</h2>
+      <h2>Γιατί CloudTec;</h2>
       <div class="usp-grid">
         <div class="usp-card">
           <font-awesome-icon :icon="['fas', 'star']" class="usp-icon" />
@@ -87,8 +103,9 @@
         <div class="usp-card">
           <font-awesome-icon :icon="['fas', 'rocket']" class="usp-icon" />
           <h3>Καινοτομία</h3>
-          <p>Πάντα μπροστά από τις τάσεις, χρησιμοποιούμε τις πιο πρόσφατες τεχνολογίες για τη δημιουργία προηγμένων
-            ιστοσελίδων.</p>
+          <p>
+            Πάντα μπροστά από τις τάσεις, χρησιμοποιούμε σύγχρονες τεχνολογίες για τη δημιουργία προηγμένων ιστοσελίδων.
+          </p>
         </div>
         <div class="usp-card">
           <font-awesome-icon :icon="['fas', 'handshake']" class="usp-icon" />
@@ -99,19 +116,29 @@
         <div class="usp-card">
           <font-awesome-icon :icon="['fas', 'thumbs-up']" class="usp-icon" />
           <h3>Διασφάλιση Ποιότητας</h3>
-          <p>Κάθε έργο δοκιμάζεται για να εξασφαλιστεί κορυφαία απόδοση, ασφάλεια και επεκτασιμότητα.</p>
+          <p>Κάθε έργο δοκιμάζεται για κορυφαία απόδοση, ασφάλεια και επεκτασιμότητα.</p>
         </div>
       </div>
-    </div>
 
+      <!-- ✅ SEO: extra internal linking -->
+      <p class="muted" style="margin-top: 14px;">
+        Θες πιο “βαριά” λύση αντί για απλή ιστοσελίδα;
+        Δες <router-link class="seo-link" to="/services/webapps">Web Apps</router-link>
+        ή <router-link class="seo-link" to="/services/eshops">eShop</router-link>.
+      </p>
+    </div>
 
     <!-- Call-to-Action Section -->
     <section class="cta-section">
       <h2>Έτοιμοι να Αναβαθμίσετε την Ιστοσελίδα σας;</h2>
       <p>Επικοινωνήστε μαζί μας σήμερα για να συζητήσουμε το έργο σας και να λάβετε δωρεάν προσφορά!</p>
-      <button class="cta-button2"><router-link to="/contact"> <font-awesome-icon icon="phone" class="icons"/> Επικοινωία </router-link></button>
-    </section>
 
+      <!-- ✅ UX/SEO: router-link styled as button (no button nesting) -->
+      <router-link class="cta-button2" to="/contact">
+        <font-awesome-icon icon="phone" class="icons" />
+        Επικοινωνία
+      </router-link>
+    </section>
   </div>
 </template>
 
@@ -188,22 +215,22 @@ export default {
 /* Hero Section */
 .hero-section {
   display: grid;
-    grid-template-columns: 1fr 1fr; 
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    grid-column-gap: 0; 
-    height: fit-content;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  grid-column-gap: 0;
+  height: fit-content;
 }
 
 .hero-content {
   display: flex;
-    flex-direction: column;
-    align-items: flex-start; 
-    justify-content: center;
-    text-align: left;
-    max-width: 60%; 
-    margin: 0 auto; 
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+  max-width: 60%;
+  margin: 0 auto;
 }
 
 .hero-content h1 {
@@ -397,9 +424,9 @@ export default {
   color: #fff;
 }
 
-.cta-button2 a{
+.cta-button2 a {
   text-decoration: none;
-  color: inherit; 
+  color: inherit;
   background: none;
 }
 
@@ -413,7 +440,7 @@ export default {
   transition: background-color 0.3s ease;
   font-weight: 500;
   font-size: 1.3rem;
- 
+
 }
 
 .cta-button2:hover {
@@ -472,6 +499,35 @@ export default {
   line-height: 1.4;
 }
 
+.cta-button2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+
+/* SEO / inline router links */
+.seo-link {
+  color: #f5c542;
+  font-weight: 600;
+  border-bottom: 2px solid rgba(245, 197, 66, 0.6);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.seo-link:hover {
+  border-bottom-color: #ffd86b;
+}
+
+
+.seo-link:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(245, 197, 66, 0.35);
+  border-radius: 2px;
+}
+
+
 @media (max-width: 768px) {
   .hero-section {
     grid-template-columns: 1fr;
@@ -487,7 +543,7 @@ export default {
     justify-content: center;
   }
 
-  .hero-image{
+  .hero-image {
     width: 100%;
     margin-left: 10%;
   }

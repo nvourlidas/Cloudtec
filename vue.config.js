@@ -4,5 +4,10 @@ module.exports = defineConfig({
   transpileDependencies: true,
   configureWebpack: {
     plugins: [new MiniCssExtractPlugin()],
+    optimization: {
+      splitChunks: {
+        chunks: 'all',
+      },
+    },
   }
 })

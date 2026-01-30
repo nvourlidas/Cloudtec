@@ -3,16 +3,26 @@
     <!-- HERO -->
     <section class="hero">
       <div class="hero-content">
-        <h1>Υπηρεσίες Ανάπτυξης Mobile Apps</h1>
+        <!-- ✅ SEO: πιο intent-based keyword -->
+        <h1>Ανάπτυξη Mobile Apps για iOS & Android</h1>
+
         <p>
-          Δημιουργούμε εφαρμογές για iOS & Android που αυξάνουν την αφοσίωση, απλοποιούν διαδικασίες
-          και μετατρέπουν χρήστες σε πελάτες.
+          Δημιουργούμε mobile εφαρμογές που αυξάνουν την αφοσίωση, απλοποιούν διαδικασίες
+          και μετατρέπουν χρήστες σε πελάτες — με push notifications, subscriptions και analytics.
         </p>
 
         <div class="hero-cta">
           <router-link class="cta-primary" to="/contact">Ζητήστε Προσφορά</router-link>
           <a class="cta-secondary" href="#demo">Δείτε Demo</a>
         </div>
+
+        <!-- ✅ SEO: internal links -->
+        <p class="muted" style="margin-top: 12px;">
+          Δείτε επίσης:
+          <router-link class="seo-link" to="/services/webapps">Web Apps</router-link>
+          ·
+          <router-link class="seo-link" to="/services/dataanalysis">Data Analysis</router-link>
+        </p>
       </div>
 
       <div class="hero-right">
@@ -28,7 +38,9 @@
     <!-- WHY -->
     <section class="section">
       <div class="container">
+        <div>
         <h2>Γιατί χρειάζεσαι Mobile App</h2>
+        </div>
         <div class="grid4">
           <div class="card">
             <div class="t">Direct σχέση</div>
@@ -50,23 +62,40 @@
       </div>
     </section>
 
+    <!-- ✅ SEO: Use cases section -->
+    <section class="section">
+      <div class="container">
+        <h2>Τι είδους mobile εφαρμογές αναπτύσσουμε</h2>
+        <div class="grid3">
+          <div class="card">
+            <div class="t">Εφαρμογές Κρατήσεων</div>
+            <div class="m">Ραντεβού, slots, cancellations, υπενθυμίσεις & κανόνες.</div>
+          </div>
+          <div class="card">
+            <div class="t">E-commerce / Subscriptions</div>
+            <div class="m">Συνδρομές, in-app purchases, πληρωμές και επίπεδα πρόσβασης.</div>
+          </div>
+          <div class="card">
+            <div class="t">Portals & Προφίλ Χρήστη</div>
+            <div class="m">Login, ιστορικό, αρχεία, ειδοποιήσεις, εξατομίκευση.</div>
+          </div>
+        </div>
+
+        <p class="muted" style="margin-top: 14px;">
+          Για back-office διαχείριση, συνήθως το δένουμε με
+          <router-link class="seo-link" to="/services/webapps">Web App / Admin Panel</router-link>.
+        </p>
+      </div>
+    </section>
+
     <!-- DEMO PHONE APP -->
     <section id="demo" class="section demo">
       <div class="container">
-        <!-- <div class="demo-head">
-          <h2>Demo: Mobile App εμπειρία μέσα στη σελίδα</h2>
-          <p class="muted">
-            Αυτό είναι ένα μικρό demo app μέσα σε “συσκευή”. Αλλάζεις tabs, βλέπεις screens και interactions —
-            όπως σε πραγματική εφαρμογή.
-          </p>
-        </div> -->
-
         <div class="demo-frame">
           <MockPhoneDemo />
         </div>
       </div>
     </section>
-
 
     <PublishedAppsSection :apps="publishedApps" />
 
@@ -100,6 +129,12 @@
             <div class="m">auth, roles, device security, monitoring.</div>
           </div>
         </div>
+
+        <!-- ✅ SEO: CTA internal link -->
+        <p class="muted" style="margin-top: 14px;">
+          Θες να το συνδυάσουμε με SEO/καμπάνιες για περισσότερα downloads;
+          <router-link class="seo-link" to="/services/dataanalysis">Data Analysis</router-link>.
+        </p>
       </div>
     </section>
 
@@ -115,6 +150,7 @@
     </section>
   </div>
 </template>
+
 
 <script>
 import MockPhoneDemo from './MobileAppDemoPhone.vue';
@@ -207,6 +243,7 @@ export default {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  flex-direction: column;
 }
 
 .muted {
@@ -373,6 +410,27 @@ export default {
   margin: 0.5rem 0 0;
   line-height: 1.6;
 }
+
+/* SEO / inline router links */
+.seo-link {
+  color: #f5c542;
+  font-weight: 600;
+  border-bottom: 2px solid rgba(245, 197, 66, 0.6);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.seo-link:hover {
+  border-bottom-color: #ffd86b;
+}
+
+
+.seo-link:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(245, 197, 66, 0.35);
+  border-radius: 2px;
+}
+
 
 @media (max-width: 980px) {
   .hero {
