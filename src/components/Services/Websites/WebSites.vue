@@ -31,6 +31,11 @@
     <!-- Services Section -->
     <section class="services-section">
       <h2>Υπηρεσίες Κατασκευής Ιστοσελίδων</h2>
+      <p class="muted" style="max-width: 900px; margin: 0 auto 2rem;">
+        Εστιάζουμε σε ταχύτητα φόρτωσης (Core Web Vitals), σωστή δομή SEO (titles, headings, schema),
+        ασφάλεια (SSL) και παρακολούθηση αποτελεσμάτων με analytics — για να φέρνει η ιστοσελίδα σας πελάτες.
+      </p>
+
       <div class="services-grid">
         <div class="service-card">
           <font-awesome-icon :icon="['fas', 'desktop']" class="service-icon" />

@@ -8,6 +8,8 @@ import MobileApps from '@/components/Services/MobileApps/MobileApps.vue'
 import DigitalMarketing from '@/components/Services/SEO/DigitalMarketing.vue'
 import DataAnalysis from '@/components/Services/DataAnalysis/DataAnalysis.vue'
 import AboutUs from '@/components/AboutUs/AboutUs.vue'
+import NotFound from '@/components/NotFound.vue';
+
 
 const SITE_NAME = 'CloudTec'
 const BASE_URL = 'https://cloudtec.gr'
@@ -35,18 +37,20 @@ const routes = [
     path: '/services/websites',
     component: WebSites,
     meta: {
-      title: `Κατασκευή Ιστοσελίδων για Επιχειρήσεις | ${SITE_NAME}`,
+      title: 'Κατασκευή Ιστοσελίδων για Επιχειρήσεις | CloudTec',
       description:
-        'Responsive, γρήγορες και SEO-friendly ιστοσελίδες με σύγχρονο design και ξεκάθαρο στόχο μετατροπές.',
-    },
+        'Κατασκευή επαγγελματικών ιστοσελίδων με responsive design, ταχύτητα και SEO. Σύγχρονο UI/UX, ασφάλεια, analytics και υποστήριξη.',
+      ogImage: 'https://cloudtec.gr/og-image.png',
+    }
   },
   {
     path: '/services/eshops',
     component: EshopService,
     meta: {
-      title: `Κατασκευή eShop & Ηλεκτρονικού Καταστήματος | ${SITE_NAME}`,
+      title: 'Κατασκευή eShop (WooCommerce/Shopify) | CloudTec',
       description:
-        'WooCommerce ή custom λύση, πληρωμές, αποστολές και SEO δομή για περισσότερες πωλήσεις.',
+        'Κατασκευή eShop με πληρωμές, μεταφορικά/courier, analytics και SEO. WooCommerce/Shopify, σύνδεση με Skroutz/marketplaces και υποστήριξη.',
+      ogImage: 'https://cloudtec.gr/og-image.png',
     },
   },
   {
@@ -80,9 +84,10 @@ const routes = [
     path: '/services/dataanalysis',
     component: DataAnalysis,
     meta: {
-      title: `Data Analysis & BI Αναφορές | ${SITE_NAME}`,
+      title: 'Data Analysis για Επιχειρήσεις & CRM Dashboards | CloudTec',
       description:
-        'Μετατρέπουμε δεδομένα σε αποφάσεις: dashboards, reports, KPIs και αυτοματοποιημένες ροές.',
+        'Ανάλυση δεδομένων για επιχειρήσεις με dashboards, KPIs, CRM pipelines και reporting. Βελτιστοποίηση marketing (funnels, ROAS, CAC/LTV) και automations.',
+      ogImage: 'https://cloudtec.gr/og-image.png',
     },
   },
   {
@@ -94,6 +99,19 @@ const routes = [
         'Η CloudTec δημιουργεί ψηφιακές λύσεις για επιχειρήσεις, με έμφαση σε ποιότητα, συνεργασία και αποτελέσματα.',
     },
   },
+  {
+    path: '/404',
+    component: NotFound,
+    meta: {
+      title: '404 | CloudTec',
+      description: 'Η σελίδα που αναζητάτε δεν βρέθηκε.',
+    },
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    redirect: '/404',
+  },
+
 ]
 
 const router = createRouter({

@@ -7,10 +7,10 @@
       <div class="hero-inner">
         <div class="hero-left">
           <p class="kicker">Data Analysis • CRM • Reporting</p>
-          <h1 class="hero-title">Data Analysis & CRM</h1>
+          <h1 class="hero-title">Data Analysis για Επιχειρήσεις & CRM</h1>
           <p class="hero-subtitle">
-            Αναλύουμε τα δεδομένα σας και δημιουργούμε στρατηγικές digital marketing για στοχευμένα αποτελέσματα —
-            με dashboards, αναφορές και automation που κάνουν την επιχείρησή σας πιο «έξυπνη».
+            Αναλύουμε τα δεδομένα σας και στήνουμε dashboards, αναφορές και CRM ροές για αποφάσεις με βάση KPIs —
+            με tracking, automation και καθαρή εικόνα σε πραγματικό χρόνο.
           </p>
 
           <div class="hero-cta">

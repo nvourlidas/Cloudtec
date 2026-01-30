@@ -28,6 +28,7 @@
           <img
             src="@/assets/Online ads-rafiki.svg"
             alt="Κατασκευή ιστοσελίδων και eShop για επιχειρήσεις"
+            loading="lazy"
             class="service-icon"
           />
 
@@ -55,6 +56,7 @@
           <img
             src="@/assets/Work time-amico.svg"
             alt="Ανάπτυξη web εφαρμογών και online πλατφορμών για επιχειρήσεις"
+            loading="lazy"
             class="service-icon"
           />
 
@@ -87,6 +89,7 @@
           <img
             src="@/assets/Catalogue-cuate.svg"
             alt="Ανάπτυξη mobile εφαρμογών για Android και iOS"
+            loading="lazy"
             class="service-icon"
           />
 

@@ -2,18 +2,30 @@
     <div class="eshop-page">
         <section class="hero-section">
             <div class="hero-content">
-                <h1>Υπηρεσίες Ανάπτυξης eShop</h1>
+                <h1>Κατασκευή eShop για Επιχειρήσεις</h1>
+
                 <p>
-                    Αναπτύσσουμε σύγχρονα, δυναμικά και φιλικά προς τον χρήστη ηλεκτρονικά καταστήματα που ενισχύουν τις
-                    πωλήσεις σας.
+                    Αναπτύσσουμε σύγχρονα, γρήγορα και SEO-friendly ηλεκτρονικά καταστήματα που ενισχύουν τις πωλήσεις
+                    σας —
+                    με πληρωμές, μεταφορικά, analytics και δυνατότητα σύνδεσης με Skroutz / marketplaces.
+                </p>
+
+                <p class="muted" style="margin-top: 10px;">
+                    Δείτε επίσης:
+                    <router-link class="seo-link" to="/services/dataanalysis">Data Analytics</router-link>
+                    ·
+                    <router-link class="seo-link" to="/services/websites">Ιστοσελίδες</router-link>
+                    ·
+                    <router-link class="seo-link" to="/contact">Επικοινωνία</router-link>
                 </p>
             </div>
-            <div class="hero-image">
-                <img src="@/assets/Ecommerce campaign-amico.svg" alt="eShop Development" />
 
+            <div class="hero-image">
+                <img src="@/assets/Ecommerce campaign-amico.svg"
+                    alt="Κατασκευή eShop με πληρωμές, μεταφορικά και SEO για υψηλότερες πωλήσεις" />
             </div>
         </section>
-        <a href="https://storyset.com/online" style="color: #1f2d3d; cursor: none;">Online illustrations by Storyset</a>
+       
         <!-- Benefits Section -->
         <section class="eshop-services-section">
             <h2>Γιατί να Επιλέξετε την Υπηρεσία μας;</h2>
@@ -88,7 +100,9 @@
             <p>Επικοινωνήστε μαζί μας σήμερα για να συζητήσουμε το έργο σας και να δημιουργήσουμε το eShop των ονείρων
                 σας.</p>
             <!-- <button class="cta-button2"><router-link to="/contact">Ζητήστε Προσφορά</router-link></button> -->
-            <router-link to="/contact" style="text-decoration: none;"> <PayMotion></PayMotion> </router-link>
+            <router-link to="/contact" style="text-decoration: none;">
+                <PayMotion></PayMotion>
+            </router-link>
         </section>
     </div>
 
@@ -101,7 +115,7 @@ export default {
     name: "eShopService",
 
     components: {
-        
+
         PayMotion
     },
     data() {
@@ -512,6 +526,26 @@ export default {
     color: #0A1931;
 }
 
+
+/* SEO / inline router links */
+.seo-link {
+  color: #f5c542;
+  font-weight: 600;
+  border-bottom: 2px solid rgba(245, 197, 66, 0.6);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.seo-link:hover {
+  border-bottom-color: #ffd86b;
+}
+
+
+.seo-link:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(245, 197, 66, 0.35);
+  border-radius: 2px;
+}
 
 
 @media (max-width: 768px) {
