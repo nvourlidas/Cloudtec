@@ -6,19 +6,20 @@
         <h3>Τηλέφωνο</h3>
         <a href="tel:+306985786121">+30 6985786121</a>
       </div>
+
       <div class="info-item">
         <font-awesome-icon icon="envelope" class="info-icon" />
         <h3>Email</h3>
-
         <a href="mailto:info@cloudtec.gr">info@cloudtec.gr</a>
       </div>
+
       <div class="info-item">
-        <!-- Main Icon and Text -->
         <font-awesome-icon :icon="['fab', 'instagram']" class="info-icon" />
         <h3>Social</h3>
         <a href="#" @click.prevent="toggleIcons" class="social-link">
           Ακολουθήστε μας
         </a>
+
         <div v-if="showIcons" class="social-icons">
           <a href="https://www.instagram.com/cloudtecgr/" target="_blank" class="socialicon insta">
             <font-awesome-icon :icon="['fab', 'instagram']" class="icon" />
@@ -33,40 +34,74 @@
       </div>
     </div>
 
-
-
-
     <!-- Form and Illustration Section -->
     <div class="form-container">
       <div class="illustration">
         <img src="@/assets/Contact us-bro.svg" alt="Contact Illustration" />
       </div>
+
       <div class="contact-form">
         <h2>Φόρμα Επικοινωνίας</h2>
+
         <form @submit.prevent="sendEmail">
           <div class="form-group">
             <label for="name">Όνομα<span class="required">*</span></label>
-            <input type="text" id="name" v-model="name" placeholder="Όνομα" required class="feedback-input" />
+            <input
+              type="text"
+              id="name"
+              v-model.trim="name"
+              placeholder="Όνομα"
+              required
+              class="feedback-input"
+              :disabled="loading"
+            />
           </div>
+
           <div class="form-group">
             <label for="email">Email <span class="required">*</span></label>
-            <input type="email" id="email" v-model="email" placeholder="someone@info.com" required
-              class="feedback-input" />
+            <input
+              type="email"
+              id="email"
+              v-model.trim="email"
+              placeholder="someone@info.com"
+              required
+              class="feedback-input"
+              :disabled="loading"
+            />
           </div>
+
           <div class="form-group">
             <label for="subject">Θέμα</label>
-            <input type="text" id="subject" v-model="subject" placeholder="Θέμα" required class="feedback-input" />
+            <input
+              type="text"
+              id="subject"
+              v-model.trim="subject"
+              placeholder="Θέμα"
+              required
+              class="feedback-input"
+              :disabled="loading"
+            />
           </div>
+
           <div class="form-group">
             <label for="message">Μήνυμα</label>
-            <textarea id="message" v-model="message" placeholder="Γράψτε ένα μήνυμα..." required
-              class="feedback-input"></textarea>
+            <textarea
+              id="message"
+              v-model.trim="message"
+              placeholder="Γράψτε ένα μήνυμα..."
+              required
+              class="feedback-input"
+              :disabled="loading"
+            ></textarea>
           </div>
-          <button type="submit" class="submit-button">Αποστολή</button>
-        </form>
-        <p v-if="statusMessage">{{ statusMessage }}</p>
-      </div>
 
+          <button type="submit" class="submit-button" :disabled="loading || !isValidEmail">
+            {{ loading ? "..." : "Αποστολή" }}
+          </button>
+        </form>
+
+        <p v-if="statusMessage" :class="statusType">{{ statusMessage }}</p>
+      </div>
     </div>
   </section>
 </template>
@@ -74,10 +109,10 @@
 <script>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import emailjs from "emailjs-com";
-
+import axios from "axios";
 
 export default {
-  name: 'ContactMain',
+  name: "ContactMain",
   components: {
     FontAwesomeIcon,
   },
@@ -87,12 +122,53 @@ export default {
       email: "",
       subject: "",
       message: "",
+
+      loading: false,
+
       statusMessage: "",
+      statusType: "", // 'success' | 'error'
+
       showIcons: false,
     };
   },
+  computed: {
+    isValidEmail() {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.email);
+    },
+  },
   methods: {
-    sendEmail() {
+    setStatus(type, msg) {
+      this.statusType = type;
+      this.statusMessage = msg;
+    },
+
+    async subscribeToReach() {
+      // split "name" to first/last for Reach (optional)
+      const parts = (this.name || "").trim().split(/\s+/);
+      const firstName = parts[0] || this.name || "";
+      const lastName = parts.length > 1 ? parts.slice(1).join(" ") : "";
+
+      return axios.post(
+        "https://cloudtec.gr/api/subscribe.php",
+        {
+          email: this.email,
+          firstName,
+          lastName,
+          source: "cloudtec_contact_form", // ✅ important (only this form triggers note)
+        },
+        { headers: { "Content-Type": "application/json" } }
+      );
+    },
+
+    async sendEmail() {
+      if (!this.isValidEmail) {
+        this.setStatus("error", "Παρακαλώ γράψτε ένα έγκυρο email.");
+        return;
+      }
+
+      this.loading = true;
+      this.statusMessage = "";
+
       const templateParams = {
         from_name: this.name,
         from_email: this.email,
@@ -100,22 +176,39 @@ export default {
         message: this.message,
       };
 
-      emailjs
-        .send("service_b3d9zxh", "template_4cq85ec", templateParams, "LrzeJH6eGNazeezGq")
-        .then(
-          (response) => {
-            this.statusMessage = "Ευχαριστούμε για το μήνυμά σας!";
-            this.name = "";
-            this.email = "";
-            this.subject = "";
-            this.message = "";
-            console.log(response)
-          },
-          (error) => {
-            this.statusMessage = "Υπήρξε ένα πρόβλημα, παρακαλώ δοκιμάστε αργότερα.";
-            console.error(error);
-          }
+      try {
+        // 1) Send email to you
+        await emailjs.send(
+          "service_b3d9zxh",
+          "template_4cq85ec",
+          templateParams,
+          "LrzeJH6eGNazeezGq"
         );
+
+        // 2) Register in Reach (non-blocking)
+        try {
+          const res = await this.subscribeToReach();
+          if (!res?.data?.success) {
+            console.warn("Reach subscribe returned non-success:", res?.data);
+          }
+        } catch (reachErr) {
+          console.warn("Reach subscribe failed:", reachErr?.response?.data || reachErr?.message || reachErr);
+        }
+
+        // Success UI
+        this.setStatus("success", "Ευχαριστούμε για το μήνυμά σας!");
+
+        // Reset fields
+        this.name = "";
+        this.email = "";
+        this.subject = "";
+        this.message = "";
+      } catch (error) {
+        console.error(error);
+        this.setStatus("error", "Υπήρξε ένα πρόβλημα, παρακαλώ δοκιμάστε αργότερα.");
+      } finally {
+        this.loading = false;
+      }
     },
 
     toggleIcons() {
@@ -124,16 +217,14 @@ export default {
     handleOutsideClick(event) {
       const infoItem = this.$refs.infoItem;
       if (infoItem && !infoItem.contains(event.target)) {
-        this.showIcons = false; 
+        this.showIcons = false;
       }
     },
   },
   mounted() {
-    // Attach a click event listener to the document
     document.addEventListener("click", this.handleOutsideClick);
   },
   beforeUnmount() {
-    // Remove the event listener when the component is destroyed
     document.removeEventListener("click", this.handleOutsideClick);
   },
 };
@@ -143,9 +234,7 @@ export default {
 .contact-page {
   padding: 2rem;
   color: #ffffff;
-
 }
-
 
 .contact-info {
   display: flex;
@@ -166,8 +255,6 @@ export default {
   margin-bottom: 0.5rem;
   transition: color 0.3s ease;
 }
-
-
 
 .info-item h3 {
   font-size: 1.2rem;
@@ -193,7 +280,6 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
 }
 
 .contact-form {
@@ -209,11 +295,6 @@ export default {
   font-size: 1.5rem;
   color: #ffffff;
   margin-bottom: 1rem;
-}
-
-.form-row {
-  display: flex;
-  gap: 1rem;
 }
 
 .form-group {
@@ -247,24 +328,9 @@ label {
 }
 
 .feedback-input:focus {
-  border: 2px solid #FFC947;
+  border: 2px solid #ffc947;
 }
 
-/* input,
-  textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #b0bec5;
-    border-radius: 5px;
-    background-color: #1a2a3a;
-    color: #ffffff;
-    font-size: 1rem;
-  }
-
-  input:focus{
-    border: 2px solid #FFC947;
-  }
-   */
 input::placeholder,
 textarea::placeholder {
   color: #b0bec5;
@@ -288,8 +354,13 @@ textarea::placeholder {
 }
 
 .submit-button:hover {
-  background-color: #FFC947;
+  background-color: #ffc947;
   color: #1a2a3a;
+}
+
+.submit-button:disabled {
+  opacity: 0.9;
+  cursor: not-allowed;
 }
 
 .illustration {
@@ -299,7 +370,18 @@ textarea::placeholder {
 .illustration img {
   width: 100%;
   height: auto;
+}
 
+/* status message */
+p.success {
+  margin-top: 12px;
+  color: #7ee081;
+  font-weight: 700;
+}
+p.error {
+  margin-top: 12px;
+  color: #ff6b6b;
+  font-weight: 700;
 }
 
 /* Responsive layout for smaller screens */
@@ -365,7 +447,7 @@ textarea::placeholder {
 }
 
 .facebook:hover {
-  background-color: #1877F2;
+  background-color: #1877f2;
   transition-duration: 0.3s;
   transform: scale(1.1);
   border-radius: 15px;
@@ -378,19 +460,16 @@ textarea::placeholder {
   border-radius: 15px;
 }
 
-
 .socialicon:hover .icon {
   animation: slide-in-top 0.5s both;
   color: #fff;
 }
-
 
 @keyframes slide-in-top {
   0% {
     transform: translateY(50px);
     opacity: 0;
   }
-
   100% {
     transform: translateY(0);
     opacity: 1;
