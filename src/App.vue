@@ -5,6 +5,7 @@
   <div v-else class="home fadeIn">
     <Navbar></Navbar> 
   <router-view />
+  <ConsentBanner />
   <FooterMain></FooterMain>
   <BackToTop></BackToTop>
 </div>
@@ -15,6 +16,7 @@ import SvgLoader from './components/Loader/SvgLoader.vue';
 import Navbar from './components/Header/NavBar.vue';
 import FooterMain from './components/Footer/FooterMain.vue';
 import BackToTop from './components/Main/BackToTop.vue';
+import ConsentBanner from './ConsentBanner.vue'
 export default {
   name: 'App',
 
@@ -22,7 +24,8 @@ export default {
     SvgLoader,
     Navbar,
     FooterMain,
-    BackToTop
+    BackToTop,
+    ConsentBanner,
   },
 
   data(){

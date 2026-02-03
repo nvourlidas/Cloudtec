@@ -42,6 +42,10 @@
         <font-awesome-icon icon="envelope" style="margin: 2%;" />
         <a class="contact-link" href="mailto:info@cloudtec.gr">info@cloudtec.gr</a>
       </p>
+       <p>
+        <font-awesome-icon icon="map-location" style="margin: 2%;" />
+        <a class="contact-link" href="mailto:info@cloudtec.gr">Εξυπηρετούμε επιχειρήσεις σε όλη την Ελλάδα.</a>
+      </p>
     </div>
 
     <div class="footer-copyright">

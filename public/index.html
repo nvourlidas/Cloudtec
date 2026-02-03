@@ -27,42 +27,52 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
 
+    <!-- ========================= -->
+  <!-- Schema: Organization -->
   <!-- ========================= -->
-<!-- Schema: Organization -->
-<!-- ========================= -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Cloudtec",
-  "url": "https://cloudtec.gr/",
-  "logo": "https://cloudtec.gr/og-image.png",
-  "email": "info@cloudtec.gr",
-  "telephone": "+306985786121",
-  "sameAs": []
-}
-</script>
-
-<!-- ========================= -->
-<!-- Schema: WebSite -->
-<!-- ========================= -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Cloudtec",
-  "url": "https://cloudtec.gr/",
-  "publisher": {
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "CloudTec",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://cloudtec.gr/cloudtec-trans.png"
+    "name": "Cloudtec",
+    "url": "https://cloudtec.gr/",
+    "logo": "https://cloudtec.gr/og-image.png",
+    "email": "info@cloudtec.gr",
+    "telephone": "+306985786121",
+    "sameAs": []
+  }
+  </script>
+
+  <!-- ========================= -->
+  <!-- Schema: WebSite -->
+  <!-- ========================= -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Cloudtec",
+    "url": "https://cloudtec.gr/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "CloudTec",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cloudtec.gr/cloudtec-trans.png"
+      }
     }
   }
-}
-</script>
+  </script>
 
+
+  <!-- Google tag (gtag.js) -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-L597S0GEQB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-L597S0GEQB');
+  </script> -->
 
   <title>
     <%= htmlWebpackPlugin.options.title %>

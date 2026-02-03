@@ -46,53 +46,26 @@
         <form @submit.prevent="sendEmail">
           <div class="form-group">
             <label for="name">Όνομα<span class="required">*</span></label>
-            <input
-              type="text"
-              id="name"
-              v-model.trim="name"
-              placeholder="Όνομα"
-              required
-              class="feedback-input"
-              :disabled="loading"
-            />
+            <input type="text" id="name" v-model.trim="name" placeholder="Όνομα" required class="feedback-input"
+              :disabled="loading" />
           </div>
 
           <div class="form-group">
             <label for="email">Email <span class="required">*</span></label>
-            <input
-              type="email"
-              id="email"
-              v-model.trim="email"
-              placeholder="someone@info.com"
-              required
-              class="feedback-input"
-              :disabled="loading"
-            />
+            <input type="email" id="email" v-model.trim="email" placeholder="someone@info.com" required
+              class="feedback-input" :disabled="loading" />
           </div>
 
           <div class="form-group">
             <label for="subject">Θέμα</label>
-            <input
-              type="text"
-              id="subject"
-              v-model.trim="subject"
-              placeholder="Θέμα"
-              required
-              class="feedback-input"
-              :disabled="loading"
-            />
+            <input type="text" id="subject" v-model.trim="subject" placeholder="Θέμα" required class="feedback-input"
+              :disabled="loading" />
           </div>
 
           <div class="form-group">
             <label for="message">Μήνυμα</label>
-            <textarea
-              id="message"
-              v-model.trim="message"
-              placeholder="Γράψτε ένα μήνυμα..."
-              required
-              class="feedback-input"
-              :disabled="loading"
-            ></textarea>
+            <textarea id="message" v-model.trim="message" placeholder="Γράψτε ένα μήνυμα..." required
+              class="feedback-input" :disabled="loading"></textarea>
           </div>
 
           <button type="submit" class="submit-button" :disabled="loading || !isValidEmail">
@@ -208,6 +181,14 @@ export default {
         this.setStatus("error", "Υπήρξε ένα πρόβλημα, παρακαλώ δοκιμάστε αργότερα.");
       } finally {
         this.loading = false;
+
+        // Google Analytics event
+        if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+          window.gtag('event', 'contact_form_submit', {
+            event_category: 'engagement',
+            event_label: 'contact_page',
+          })
+        }
       }
     },
 
@@ -378,6 +359,7 @@ p.success {
   color: #7ee081;
   font-weight: 700;
 }
+
 p.error {
   margin-top: 12px;
   color: #ff6b6b;
@@ -470,6 +452,7 @@ p.error {
     transform: translateY(50px);
     opacity: 0;
   }
+
   100% {
     transform: translateY(0);
     opacity: 1;

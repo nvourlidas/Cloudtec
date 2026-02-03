@@ -184,6 +184,16 @@ router.afterEach((to) => {
   upsertMetaTag('twitter:title', title)
   upsertMetaTag('twitter:description', description)
   upsertMetaTag('twitter:image', 'https://cloudtec.gr/og-image.png')
+
+  // ✅ GA4 SPA pageview (JS safe)
+  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+    window.gtag('config', 'G-L597S0GEQB', {
+      page_path: to.fullPath,
+      page_title: title,
+    })
+  }
 })
+
+
 
 export default router

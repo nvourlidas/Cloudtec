@@ -1,48 +1,18 @@
 <template>
   <div>
     <form @submit.prevent="sendEmail">
-      <input
-        name="name"
-        type="text"
-        class="feedback-input"
-        placeholder="Όνομα"
-        v-model.trim="name"
-        :disabled="loading"
-        required
-      />
-      <input
-        name="email"
-        type="email"
-        class="feedback-input"
-        placeholder="Email"
-        v-model.trim="email"
-        :disabled="loading"
-        required
-      />
-      <textarea
-        name="text"
-        class="feedback-input"
-        placeholder="Μήνυμα ..."
-        v-model.trim="message"
-        :disabled="loading"
-        required
-      ></textarea>
+      <input name="name" type="text" class="feedback-input" placeholder="Όνομα" v-model.trim="name" :disabled="loading"
+        required />
+      <input name="email" type="email" class="feedback-input" placeholder="Email" v-model.trim="email"
+        :disabled="loading" required />
+      <textarea name="text" class="feedback-input" placeholder="Μήνυμα ..." v-model.trim="message" :disabled="loading"
+        required></textarea>
 
-      <input
-        type="submit"
-        :value="loading ? '...' : 'Αποστολή'"
-        :disabled="loading || !isValidEmail"
-      />
+      <input type="submit" :value="loading ? '...' : 'Αποστολή'" :disabled="loading || !isValidEmail" />
     </form>
 
     <!-- MODAL -->
-    <div
-      v-if="isModalOpen"
-      class="modal-overlay"
-      @click.self="closeModal"
-      role="dialog"
-      aria-modal="true"
-    >
+    <div v-if="isModalOpen" class="modal-overlay" @click.self="closeModal" role="dialog" aria-modal="true">
       <div class="modal-card">
         <div class="modal-header">
           <h3 class="modal-title" :class="modalType">
@@ -183,6 +153,15 @@ export default {
         console.error(err);
       } finally {
         this.loading = false;
+
+        // Google Analytics event
+        if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+          window.gtag('event', 'contact_form_submit', {
+            event_category: 'engagement',
+            event_label: 'contact_page',
+          })
+        }
+
       }
     },
   },
@@ -286,6 +265,7 @@ textarea {
 .modal-title.success {
   color: #7ee081;
 }
+
 .modal-title.error {
   color: #ff6b6b;
 }
@@ -300,6 +280,7 @@ textarea {
   padding: 6px 10px;
   border-radius: 10px;
 }
+
 .modal-close:hover {
   background: rgba(255, 255, 255, 0.06);
 }
@@ -332,6 +313,7 @@ textarea {
 .modal-btn.success {
   background: #7ee081;
 }
+
 .modal-btn.error {
   background: #ff6b6b;
 }
